@@ -1,0 +1,109 @@
+<div class="dashboard">
+    <div style="line-height: 30px; margin-bottom: 15px;">
+    <p class="dashboard-title d-inline">Dashboard </p>
+    <div style="float: right; display: inline-block;" >
+    <button  ejs-button class="e-btn e-info btn-top " *ngIf="allow == true" (click)="onOpenDialog1($event)">add panel</button>
+    <button  ejs-button id='saveBtn' class="btn-top" *ngIf="allow == true" #saveBtn cssClass="e-primary" (click)='onSaveClick($event)'>Save</button>
+    <!-- <button ejs-button>sdrcg</button> -->
+    <!-- <button ejs-button>sdrcg</button> -->
+</div>
+</div>
+<!-- <app-factories></app-factories> -->
+    <ejs-dashboardlayout 
+    #dashboard 
+    id='dashboardLayout' 
+    [cellSpacing]='cellSpacing' 
+    [allowResizing]='allow'  
+    [columns]="50"  
+    [allowFloating]='allowFloating' 
+    [cellAspectRatio]='cellAspectRatio'
+    [allowDragging]='allow'
+ (resizeStart)="onResizeStart($event)" 
+      >
+      <e-panels>
+      </e-panels>
+    </ejs-dashboardlayout>
+</div>
+
+
+
+
+<!-- placing the custom component within ng-template -->
+<ng-template #CustomTemplate1>
+  <div style="height:100%; width: 100%;" class="templateContent">
+    <span id="close" class="e-template-icon e-close-icon closex" *ngIf="allow == true"
+    style=" 
+    height: 0px; 
+    z-index: 1000;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    top: 5px;
+    float: right;
+    margin-right: 7px;" (click)="onCloseIconHandler($event)"></span>
+    <app-performance></app-performance>
+  </div>
+</ng-template>
+<ng-template #CustomTemplate2>
+  <div style="height:100%; width: 100%;" class="templateContent">
+    <span id="close" class="e-template-icon e-close-icon closex" *ngIf="allow == true"
+    style=" 
+    height: 0px; 
+    z-index: 1000;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    top: 5px;
+    float: right;
+    margin-right: 7px;" (click)="onCloseIconHandler($event)"></span>
+    <!-- <app-current-activity></app-current-activity> -->
+    <app-loss-tree></app-loss-tree>
+  </div>
+</ng-template>
+<ng-template #CustomTemplate3 (mouseenter)="stop()">
+  <div style="height:100%; width: 100%;" class="templateContent">
+    <span id="close" class="e-template-icon e-close-icon closex" *ngIf="allow == true"
+    style=" 
+    height: 0px; 
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    top: 5px;
+    float: right;
+    margin-right: 7px;" (click)="onCloseIconHandler($event)"></span>
+    <app-time-line></app-time-line>
+    <!-- <app-time-line-bullet></app-time-line-bullet> -->
+  </div>
+</ng-template>
+<ng-template #CustomTemplate4>
+  <div style="height:100%; width: 100%;" class="templateContent">
+    <span id="close" class="e-template-icon e-close-icon closex" *ngIf="allow == true"
+    style=" 
+    height: 0px; 
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    top: 5px;
+    float: right;
+    margin-right: 7px;" (click)="onCloseIconHandler($event)"></span>
+    <app-cycle-time></app-cycle-time>
+  </div>
+</ng-template>
+<!-- adding a ng container to append the template in the container -->
+<ng-container #viewContainer></ng-container>
+
+
+
+<ejs-dialog id='dialog' style="max-height: 1000px !important;" #ejDialog1 isModal='true' header='PANALS' [visible]='hidden' [target]='targetElement'
+  width='500px' showCloseIcon='true' max-height='500px' height='200px' (overlayClick)="onOverlayClick()"
+   [position]='position1'>
+  <ng-template #content>
+    <ejs-dropdownlist id='ddlelement' #samples [dataSource]='data' [placeholder]='placeholder' (change)='onChange($event)' floatLabelType="Auto"></ejs-dropdownlist>
+  </ng-template>
+  <ng-template #footerTemplate>
+    
+  <button id="Button1" class="e-control e-btn e-primary e-flat" (click)="BtnClick($event)" data-ripple="true">OK</button>
+  </ng-template>
+</ejs-dialog>

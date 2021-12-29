@@ -1,0 +1,590 @@
+<div class="performance-full row">
+  <div class="performance-full-left">
+    <div class="performance-full-title">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <defs>
+          <style>
+            .a1,
+            .b1 {
+              fill: none;
+            }
+
+            .b1 {
+              stroke: #2c3e50;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 1.5px;
+            }
+          </style>
+        </defs>
+        <path class="a1" d="M0,0H24V24H0Z" />
+        <path class="b1" d="M4,7V6A2,2,0,0,1,6,4H8" />
+        <path class="b1" d="M4,17v1a2,2,0,0,0,2,2H8" />
+        <path class="b1" d="M16,4h2a2,2,0,0,1,2,2V7" />
+        <path class="b1" d="M16,20h2a2,2,0,0,0,2-2V17" />
+        <rect class="b1" width="1" height="2" transform="translate(5 11)" />
+        <line class="b1" y2="2" transform="translate(10 11)" />
+        <rect class="b1" width="1" height="2" transform="translate(14 11)" />
+        <line class="b1" y2="2" transform="translate(19 11)" />
+      </svg>
+      <span>Total Production</span>
+    </div>
+    <div class="performance-full-body" *ngIf="totalbottels > 0">
+      <div class="row">
+        <div class="col-7 total-production right-total-production">
+          <img src="../../../assets/img/bottle.png" alt="" srcset="" /> Bottle
+        </div>
+        <div class="col-5 total-production left-total-production">
+          {{ totalbottels | number: "1.0-0" }}
+        </div>
+        <div class="col-7 total-production right-total-production">
+          <img src="../../../assets/img/pack.png" alt="" srcset="" /> Physical Case
+        </div>
+        <div class="col-5 total-production left-total-production">
+          {{ totalPacketstit | number: "1.0-0" }}
+        </div>
+        <div class="col-7 total-production right-total-production">
+          <img src="../../../assets/img/pallete.png" alt="" srcset="" /> Pallet
+        </div>
+        <div class="col-5 total-production left-total-production">
+          {{ totalPalletstit | number: "1.0-0" }}
+        </div>
+        <!-- <div class="col-6 total-production">
+                    <span class="text-bold">
+                        {{_CurrentActivityService.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.sumProductionHours | number:'1.0-0'}}
+                         -->
+        <!-- <sub>bph</sub> -->
+        <!-- <sub *ngIf="this._CurrentActivityService.dashboardModelCompair?.throughput > 0 || _CurrentActivityService.dashboardModelCompair?.throughput < 0" [ngStyle]="{'color':_CurrentActivityService.dashboardModelCompair?.throughput >= 0 ? 'red' : 'rgb(0, 193, 0)' }" class="my-1"
+                          style=" font-weight: 600; display: block;">
+                            <i class="fas fa-caret-up" *ngIf="_CurrentActivityService.dashboardModelCompair?.throughput < 0"></i>
+                            <i class="fas fa-caret-down" *ngIf="_CurrentActivityService.dashboardModelCompair?.throughput > 0"></i>
+                            {{_CurrentActivityService.dashboardModelCompair?.throughput | number:'1.0-0'}}
+                            bph
+                        </sub> -->
+        <!-- </span>
+                    <p class="text-muted">Production/h</p>
+                </div>
+                <div class="col-6">
+                    <span class="text-bold" [textContent]=" " >
+                        {{_CurrentActivityService.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.totalPallets*-1 | number:'1.0-0'}} -->
+        <!-- <sub *ngIf="this._CurrentActivityService.dashboardModelCompair?.throughput > 0 || _CurrentActivityService.dashboardModelCompair?.throughput < 0" [ngStyle]="{'color':_CurrentActivityService.dashboardModelCompair?.totalPallets >= 0 ? 'red' : 'rgb(0, 193, 0)' }" style=" font-weight: 600;display: block;">
+                            <i class="fas fa-caret-up" *ngIf="_CurrentActivityService.dashboardModelCompair?.totalPallets < 0 "></i>
+                            <i class="fas fa-caret-down" *ngIf="_CurrentActivityService.dashboardModelCompair?.totalPallets > 0 "></i>
+                            {{_CurrentActivityService.dashboardModelCompair?.totalPallets | number:'1.0-0'}}
+                        </sub> -->
+        <!-- </span>
+                    <p  class="text-muted">Total Pallets</p>
+                </div>
+                <div class="col-12">
+                    <span class="text-bold" [textContent]=" " >
+                        {{_CurrentActivityService.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.actualProductionBottle | number:'1.0-0'}} -->
+        <!-- <sub *ngIf="this._CurrentActivityService.dashboardModelCompair?.throughput > 0 || _CurrentActivityService.dashboardModelCompair?.throughput < 0" [ngStyle]="{'color':_CurrentActivityService.dashboardModelCompair?.factoryParameters?.actualProduction >= 0 ? 'red' : 'rgb(0, 193, 0)' }" style=" font-weight: 600;">
+                            <i class="fas fa-caret-up" *ngIf="_CurrentActivityService.dashboardModelCompair?.factoryParameters?.actualProduction <= 0"></i>
+                            <i class="fas fa-caret-down" *ngIf="_CurrentActivityService.dashboardModelCompair?.factoryParameters?.actualProduction >= 0"></i>
+                            {{_CurrentActivityService.dashboardModelCompair?.factoryParameters?.actualProduction | number:'1.0-0'}}
+                        </sub> -->
+        <!-- </span>
+                    <p  class="text-muted">Actual Production Bottles</p> -->
+        <!-- </div> -->
+        <!-- <div class="col-10" style="height: 100%;">
+                    <div class="progress progress-bar-position" >
+                        <div class="progress-bar progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                    <p class="progress-bar-sub">Production Yield</p>
+                </div>
+                <div class="col-2 progress-bar-position-2">
+                    75%
+                </div> -->
+      </div>
+    </div>
+    <div class="performance-full-body warn-msg" *ngIf="!totalbottels">
+      <p>Resource is offline! </p>
+    </div>
+  </div>
+
+  <div class="performance-full-middle">
+    <div class="performance-full-title">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <defs>
+          <style>
+            .a2,
+            .b2 {
+              fill: none;
+            }
+
+            .b2 {
+              stroke: #2c3e50;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 1.5px;
+            }
+          </style>
+        </defs>
+        <path class="a2" d="M0,0H24V24H0Z" />
+        <circle class="b2" cx="2" cy="2" r="2" transform="translate(12 4)" />
+        <line class="b2" x2="8" transform="translate(4 6)" />
+        <line class="b2" x2="4" transform="translate(16 6)" />
+        <circle class="b2" cx="2" cy="2" r="2" transform="translate(6 10)" />
+        <line class="b2" x2="2" transform="translate(4 12)" />
+        <line class="b2" x2="10" transform="translate(10 12)" />
+        <circle class="b2" cx="2" cy="2" r="2" transform="translate(15 16)" />
+        <line class="b2" x2="11" transform="translate(4 18)" />
+        <line class="b2" x2="1" transform="translate(19 18)" />
+      </svg>
+      <span>Performance Indicator KPI</span>
+    </div>
+    <div class="performance-full-body" style="height: calc(100% - 38px); " *ngIf="totalbottels > 0">
+      <div class="row" style="height: 100%">
+        <div
+          class="col-12"
+          style="height: 100%; position: relative; left: -12px"
+        >
+          <app-performance-circle-progress-bar></app-performance-circle-progress-bar>
+        </div>
+        <!-- <div
+          class="col-6"
+          style="border-left: 1px solid lightgray; height: 100%; padding: 0px"
+        > -->
+          <!-- <app-performance-straight-progress-bar></app-performance-straight-progress-bar> -->
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="performance-full-body warn-msg" *ngIf="!totalbottels">
+      <p>Resource is offline! </p>
+    </div>
+  </div>
+  <div class="performance-full-right">
+    <div class="performance-full-title">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <defs>
+          <style>
+            .a3,
+            .b3 {
+              fill: none;
+            }
+
+            .b3 {
+              stroke: #2c3e50;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 1.5px;
+            }
+          </style>
+        </defs>
+        <path class="a3" d="M0,0H24V24H0Z" />
+        <path class="b3" d="M13,3v7h6L11,21V14H5L13,3" />
+      </svg>
+      <span>Usage Ratios</span>
+    </div>
+    <div
+      class="performance-full-body mt-2" *ngIf="totalbottels > 0"
+      style="border-bottom: 1px solid lightgray"
+    >
+      <div class="row  mt-3">
+        <div
+          class="col-6 total-production2 right-total-production "
+          style="padding: 0; position: relative; ">
+          <img src="../../../assets/img/energy.png" alt="" srcset="" /> Energy
+          <sub style="position: relative; top: 13px; left: -36px">(WH)</sub>
+        </div>
+        <div
+          class="col-6 total-production2 left-total-production row"
+          style="padding: 0"
+        >
+          <div
+            class="col-12 text-center"
+            style="
+              padding: 0;
+              height: 0px;
+              line-height: 0px;
+              font-size: 10px;
+              color: #08415c;
+              position: relative;
+              top: 5px;
+              font-weight: bold;
+            "
+          >
+            Per Liter
+          </div>
+          <div
+            class="col-12 text-center"
+            style="padding: 0; position: relative; top: 8px"
+          >
+            {{ energyLiterRatiotit | number: "1.0-5" }}
+          </div>
+          <!-- <div
+            class="col-12 text-center"
+            style="
+              padding: 0;
+              height: 0px;
+              line-height: 0px;
+              font-size: 10px;
+              color: #08415c;
+              position: relative;
+              top: 20px;
+              font-weight: bold;
+            "
+          >
+            Per Part
+          </div>
+          <div
+            class="col-12 text-center"
+            style="padding: 0; position: relative; top: 24px"
+          >
+            {{ energyBottleRatiotit | number: "1.0-3" }}
+          </div> -->
+        </div>
+
+        <div
+          class="col-6 total-production2 right-total-production"
+          style="padding: 0; position: relative; top: 46px"
+        >
+          <img src="../../../assets/img/water.png" alt="" srcset="" /> Water<sub
+            style="position: relative; top: 13px; left: -23px"
+            >(L)</sub
+          >
+        </div>
+        <div
+          class="col-6 total-production2 left-total-production row"
+          style="padding: 0;position: relative;"
+        >
+          <div
+            class="col-12 text-center bg-danger"
+            style="
+              padding: 0;
+              height: 0px;
+              line-height: 0px;
+              font-size: 10px;
+              color: #08415c;
+              position: relative;
+              top: 55px;
+              font-weight: bold;
+            "
+          >
+            Per Liter
+          </div>
+          <!-- <div
+            class="col-12 text-center"
+            style="
+              padding: 0;
+              height: 0px;
+              line-height: 0px;
+              font-size: 10px;
+              color: #08415c;
+              position: relative;
+              top: 75px;
+              font-weight: bold;
+            "
+          >
+            Per Part
+          </div> -->
+          <!-- <div class="">{{ energyBottleRatiotit | number: "1.0-3" }}</div> -->
+          <!-- <div
+            class="col-12 text-center"
+            style="padding: 0; position: relative; top: 83px"
+          >
+            {{ waterBottleRatio | number: "1.0-3" }}
+          </div> -->
+          <div
+            class="col-12 text-center"
+            style="padding: 0; position: absolute; top: 57px"
+          >
+            {{ waterLiterRatio | number: "1.0-3" }}
+          </div>
+         
+        </div>
+
+        <!-- <div class="col-6">
+                    <span class="text-bold">{{_CurrentActivityService.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.sumEnergy | number:'1.0-0'}}
+                        <sub *ngIf="this._CurrentActivityService.dashboardModelCompair?.throughput > 0 || _CurrentActivityService.dashboardModelCompair?.throughput < 0" [ngStyle]="{'color':_CurrentActivityService.dashboardModelCompair?.energy < 0 ? 'red' : 'rgb(0, 193, 0)' }" style=" font-weight: 600; display: block;"  class="my-1">
+                            <i class="fas fa-caret-up" *ngIf="_CurrentActivityService.dashboardModelCompair?.energy < 0"></i>
+                            <i class="fas fa-caret-down" *ngIf="_CurrentActivityService.dashboardModelCompair?.energy > 0"></i>
+                            {{_CurrentActivityService.dashboardModelCompair?.energy | number:'1.0-0'}}
+                        </sub>
+                    </span>
+                    <p class="text-muted">Energy(KWH)</p>
+                </div>
+                <div class="col-6">
+                    <span class="text-bold">{{_CurrentActivityService.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.sumEnergyPF | number:'1.0-2'}}
+                        <sub *ngIf="this._CurrentActivityService.dashboardModelCompair?.throughput > 0 || _CurrentActivityService.dashboardModelCompair?.throughput < 0" [ngStyle]="{'color':_CurrentActivityService.dashboardModelCompair?.avgPF > 0 ? 'red' : 'rgb(0, 193, 0)' }" style=" font-weight: 600;display: block;">
+                            <i class="fas fa-caret-up" *ngIf="_CurrentActivityService.dashboardModelCompair?.avgPF < 0"></i>
+                            <i class="fas fa-caret-down" *ngIf="_CurrentActivityService.dashboardModelCompair?.avgPF > 0"></i>
+                            {{_CurrentActivityService.dashboardModelCompair?.avgPF | number:'1.0-0'}}
+                        </sub>
+                    </span>
+                    <p class="text-muted">Average PowerFactor</p>
+                </div>
+                <div class="col-12" style="position: relative;top: -20px;">
+                    <span class="text-bold">{{_CurrentActivityService.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.energyUseIndex | number:'1.0-3'}}
+                        <sub *ngIf="this._CurrentActivityService.dashboardModelCompair?.throughput > 0 || _CurrentActivityService.dashboardModelCompair?.throughput < 0" [ngStyle]="{'color':_CurrentActivityService.dashboardModelCompair?.energyUserIndex < 0 ? 'red' : 'rgb(0, 193, 0)' }" style=" font-weight: 600;">
+                            <i class="fas fa-caret-up" *ngIf="_CurrentActivityService.dashboardModelCompair?.energyUserIndex < 0"></i>
+                            <i class="fas fa-caret-down" *ngIf="_CurrentActivityService.dashboardModelCompair?.energyUserIndex > 0"></i>
+                            {{_CurrentActivityService.dashboardModelCompair?.energyUserIndex | number:'1.0-0'}}
+                        </sub>
+                    </span>
+                    <p class="text-muted"> Energy Use Index (w/bottle)</p>
+                </div>
+            </div> -->
+
+      </div>
+    </div>
+    <div class="performance-full-body warn-msg" *ngIf="!totalbottels">
+      <p>Resource is offline! </p>
+    </div>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="performance-full-right1 ">
+    <div class="performance-full-title">
+      <i class="fab fa-yelp"></i>
+      <span> Yields</span>
+    </div>
+  
+    <div class="performance-full-body mt-2  h-75" *ngIf="totalbottels > 0">
+      <div class="row myRow ">
+        <div style="border-right: lightgray solid 1px;" class="col-6 row co2-row ">
+          <div class="col-8">
+            <p>CO<sub>2</sub>  yield</p>
+          </div>
+          <div class="col-8">
+            <div class="text-center">
+            <span>  {{ co2Yield * 100 | number: "1.0-1" }}% </span>
+            </div>
+          </div>
+
+
+          <div class="col-8">
+            <p>Syrup yield</p>
+          </div>
+          <div class="col-8">
+            <div class="text-center">
+            <span>  {{ syrupYield *100 | number: "1.0-1" }}% </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-6 row align-items-strech">
+          <div class="col-8">
+            <p>Preform yield</p>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+            <span>  {{ preformYield *100 | number: "1.0-1" }}% </span>
+            </div>
+          </div>
+  
+  
+          
+         
+
+
+           
+        <div class="col-8">
+          <p>Cans yield</p>
+        </div>
+        <div class="col-4">
+          <div class="text-center">
+          <span>  {{ cansYield *100 | number: "1.0-1" }}% </span>
+          </div>
+        </div>
+
+
+        
+        <div class="col-8">
+          <p>NRB yield</p>
+        </div>
+        <div class="col-4">
+          <div class="text-center">
+          <span>  {{ nrGlassYield * 100 | number: "1.0-1" }}% </span>
+          </div>
+        </div>
+
+
+        <div class="col-8">
+          <p>Crowns yield</p>
+        </div>
+        <div class="col-4">
+          <div class="text-center">
+          <span>  {{ crownsYield *100 | number: "1.0-1" }} %</span>
+          </div>
+        </div>
+
+
+        
+        <div class="col-8">
+          <p> Closures</p>
+        </div>
+        <div class="col-4">
+          <div class="text-center">
+          <span>  {{ closures *100 | number: "1.0-1" }}% </span>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="col-4">
+          <p>CO<sub>2</sub>  yield</p>
+        </div>
+        <div class="col-2">
+          <div class="text-center">
+          <span>  {{ co2Yield * 100 | number: "1.0-1" }}% </span>
+          </div>
+        </div> -->
+
+
+
+<!-- perform Yield  -->
+
+
+
+
+
+
+
+        
+
+
+       
+
+
+<!-- perform Yield  -->
+
+
+
+
+       
+
+
+
+
+
+<!-- 
+        <div
+          class="col-6 total-production2 right-total-production"
+          style="padding: 0; position: relative; top: 46px"
+        >
+           preformYield
+        </div>
+
+
+        <div
+          class="col-6 total-production2 left-total-production row"
+          style="padding: 0;position: relative;"
+        >
+      
+         
+      
+          <div
+            class="col-12 text-center"
+            style="padding: 0; position: absolute; top: 45px"
+          >
+            {{ preformYield | number: "1.0-3" }}
+          </div>
+         
+        </div>
+ -->
+
+
+
+
+        <!-- syrup  -->
+<!-- 
+        <div
+        class="col-6 total-production2 right-total-production"
+        style="padding: 0; position: relative; top: 46px"
+      >
+         syrupYield
+      </div>
+      <div
+        class="col-6 total-production2 left-total-production row"
+        style="padding: 0;position: relative;"
+      >
+    
+       
+    
+        <div
+          class="col-12 text-center"
+          style="padding: 0; position: absolute; top: 45px"
+        >
+          {{ syrupYield | number: "1.0-3" }}
+        </div>
+       
+      </div> -->
+
+   
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <div class="performance-full-body warn-msg" *ngIf="!totalbottels">
+      <p>Resource is offline! </p>
+    </div>
+  </div>
+
+  
+
+</div>

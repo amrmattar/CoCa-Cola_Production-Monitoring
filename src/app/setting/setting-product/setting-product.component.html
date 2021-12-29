@@ -1,0 +1,89 @@
+<div class="Setting-Product">
+  <div class="Setting-Product-form">
+    <div class="add-product shadow mt-1">
+      <p class="product-title">
+        <img src="../../../assets/img/pack.png" alt="" srcset="" />
+        Product Setting
+      </p>
+      <div class="row mt-1">
+        <div class="col-5 mt-1">Product Name</div>
+        <div class="col-7 mt-1">
+          <input class="e-input" type="text" placeholder="Enter Name"   [(ngModel)]="ProductName" />
+        </div>
+        <div class="col-5 mt-1">SKU size</div>
+        <div class="col-7 mt-1">
+          <input class="e-input" type="number" placeholder="Enter Name"   [(ngModel)]="SKUSize" />
+        </div>
+        <!-- <div class="col-5 mt-1">Product Size</div>
+        <div class="col-7 mt-1">
+          <input class="e-input" type="number" placeholder="Enter Size" [(ngModel)]="ProductSize" />
+        </div> -->
+        <div class="col-5 mt-1">Pack Size</div>
+        <div class="col-7 mt-1">
+          <input class="e-input" type="number" placeholder="Enter Size" [(ngModel)]="PackSize" />
+        </div>
+        <div class="col-5 mt-1 ">Pallet Size</div>
+        <div class="col-7 mt-1 ">
+          <input class="e-input" type="number" placeholder="Enter Size" [(ngModel)]="PalletSize" />
+        </div>
+        <div class="col-5 mt-1 ">UOM</div>
+        <div class="col-7 mt-1 ">
+          <ejs-dropdownlist #ddlelement id='factory'  [dataSource]='UOMList' placeholder = 'Select Factory' (change)='onChange($event)'></ejs-dropdownlist>
+        </div>
+        <div class="col-5 mt-1 ">Rated Speed</div>
+        <div class="col-7 mt-1 ">
+          <input class="e-input" type="number" placeholder="Enter UOM" [(ngModel)]="ratedSpeed" />
+        </div>
+        <div class="col-12 my-1 text-center">
+          <button ejs-button class="e-danger" (click)="save()">save</button>
+        </div>
+      </div>
+    </div>
+    <div class="add-product shadow mt-1">
+      <p class="product-title">
+        <img src="../../../assets/img/pack.png" alt="" srcset="" />
+        Add UOM
+      </p>
+      <div class="row  px-3" style="max-height: 280px;overflow: auto;">
+        <div class="col-12 ">
+          <!-- <input class="e-input" type="text" placeholder="Enter UOM" [(ngModel)]="newUOM" /> -->
+          <ejs-textbox placeholder="Enter UOM"  floatLabelType="Auto" [(ngModel)]="newUOM" autocomplete='false'></ejs-textbox>
+        </div>
+        <div class="col-12">
+          <ejs-textbox floatLabelType='auto' placeholder='Enter UOM Description' [(ngModel)]="newDesc" ></ejs-textbox>
+        </div>
+        <div class="col-12 mb-1 text-center">
+          <button ejs-button class="e-success" (click)="adduom()">add</button>
+        </div>
+        <div class="col-12  mb-1 row"  style="padding: 0;">
+          <div class="col-3 border text-center font-title">Unit</div>
+          <div class="col-8 border text-center font-title">Description</div>
+          <div class="col-1 text-center" style="padding: 0;"><span class="e-icons e-delete-1"></span></div>
+        </div>
+        <div class="col-12  mb-1 uom-list row" *ngFor="let uom of UOMList" style="padding: 0;">
+          <div class="col-3 border text-center font">{{uom.text}}</div>
+          <div class="col-8 border text-center font">{{uom.description}}</div>
+          <div class="col-1 text-center" style="padding: 0;cursor: pointer;" (click)="deleteUOM(uom.value)"><span class="e-icons e-delete-1"></span></div>
+          <!-- <p class="uom-list">{{uom}}</p> -->
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+  <div class="Setting-Product-grid">
+    <ejs-grid [dataSource]='data' locale='en-US' allowPaging='true' height=530  [pageSettings]='pageSettings' [editSettings]='editSettings' (commandClick)='clickHandler($event)'>
+        <e-columns>
+            <e-column field='id' headerText='Product ID'  isPrimaryKey='true' ></e-column>
+            <e-column field='productName' headerText='Product Name' ></e-column>
+            <e-column field='size' headerText='Product Size'  editType='numericedit' ></e-column>
+            <e-column field='technicalSKU' headerText='SKU Size'  editType='numericedit' ></e-column>
+            <e-column field='packSize' headerText='Pack Size'   editType='numericedit' ></e-column>
+            <e-column field='palteSize' headerText='Pallet Size'    editType='numericedit' ></e-column>
+            <e-column field='ratedSpeed' headerText='Rated Speed'    editType='numericedit' ></e-column>
+            <e-column field='measuringUnit' headerText='UOM' editType='dropdownedit' [edit]='editparams'></e-column>
+            <e-column headerText='Manage Products'  [commands]='commands'></e-column>
+        </e-columns>
+    </ejs-grid>
+  </div>
+</div>

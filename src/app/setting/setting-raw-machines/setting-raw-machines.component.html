@@ -1,0 +1,66 @@
+    <div class="p-2 nuallocated " style="height: calc(100% - 5px);background-color: #fff; ">
+        
+        <div class="col-3 shadow " style="height: 100%; margin-left: 20px;">
+            <div class="text-center">List of unassigned machines:</div>
+            <ejs-listbox #ListBox id="listbox" [dataSource]="machineList"  height='170' (created)="created()"
+        (valueChange)="valueChange($event)"></ejs-listbox>
+        <div class="manage-machine-functions ">
+            <div class="row">
+            <div class="col-12 text-center" style="font-size: 12px;font-weight: 600;">Manage Machine Functions</div>
+            <div class="col-9">
+                <ejs-textbox placeholder="Enter Machine Function" [(ngModel)]="newmachineFunction" autocomplete='false'></ejs-textbox>
+            </div>
+            <div class="col-3 text-center ">
+                <button ejs-button class="e-success mt-2" (click)="addmachineFunction()">add</button>
+            </div>
+            <div class="col-12 mt-1" *ngFor="let machine of MachineFunctionality">
+                <div class="border px-2" style="position: relative;">{{machine.text}}
+                    <i class="fas fa-times " style="position: absolute;right: 10px;top: 5px;cursor: pointer;" 
+                    (click)="deletemachineFunction(machine.value)"></i>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-7 shadow" style="background-color: #fff; border: 1px solid lightgray; border-radius: 10px;">
+        <div class="col-12 row p-3" style="height: 100%;margin-top: 10px;">
+            <div class="col-4">Machine ID</div>
+            <div class="col-1">:</div>
+            <div class="col-6 mb-2">
+                {{MachineID}}
+            </div>
+            <div class="col-4" >Factory ID</div>
+            <div class="col-1">:</div>
+            <div class="col-6">
+                <ejs-dropdownlist #ddlelement id='factory'  [dataSource]='factories' placeholder = 'Select Factory' (change)='onChange($event)'></ejs-dropdownlist>
+            </div>
+            <div class="col-4" >Line ID</div>
+            <div class="col-1">:</div>
+            <div class="col-6">
+                <ejs-dropdownlist id='line' [dataSource]='lines' placeholder = 'Select Line' (change)='onChange($event)'></ejs-dropdownlist>
+            </div>
+            <div class="col-4" >Machine Type</div>
+            <div class="col-1">:</div>
+            <div class="col-6">
+                <ejs-dropdownlist id='machine type' [dataSource]='MachineTypes' placeholder = 'Select Machine Type' (change)='onChange($event)'></ejs-dropdownlist>
+            </div>
+            <div class="col-4" >Machine Function</div>
+            <div class="col-1">:</div>
+            <div class="col-6">
+                <ejs-dropdownlist id='machine functionality' [dataSource]='MachineFunctionality' placeholder = 'Select Machine Functionality' (change)='onChange($event)'></ejs-dropdownlist>
+            </div>
+            <div class="col-4" >Rated Speed</div>
+            <div class="col-1">:</div>
+            <div class="col-6">
+                <ejs-numerictextbox  id='speed' value='0' (change)='onChange($event)'></ejs-numerictextbox>
+            </div>
+            
+            <div class="col-11">
+            <div class="text-center pt-1">
+                <button ejs-button class="e-danger" (click)="save()">save</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>

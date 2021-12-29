@@ -1,0 +1,52 @@
+<div class="usage-ratio-top">
+  <div class="left-grid">
+    <div class="left-grid-body">
+      <ejs-grid
+        [dataSource]="data"
+        allowPaging="true"
+        [allowSelection]="true"
+        [selectionSettings]="selectOptions"
+        [pageSettings]="pageSettings"
+        (rowSelected)="rowSelected($event)"
+        height="100%"
+      >
+        <e-columns>
+          <e-column type="checkbox" width="50"></e-column>
+          <e-column field="OrderID" headerText="Factory Name" isPrimaryKey="true">
+          </e-column>
+          <e-column field="CustomerName" headerText="Load Name"></e-column>
+          <e-column field="OrderDate" headerText="Function"></e-column>
+          <e-column field="Freight" headerText="Type"></e-column>
+        </e-columns>
+      </ejs-grid>
+    </div>
+  </div>
+  <div class="right-list">
+    <ejs-dropdownlist
+      #ddlelement
+      id="factory"
+      [(ngModel)]="factorySelect"
+      [dataSource]="source"
+      placeholder="Select Factory"
+      (change)="onChange($event)"
+      floatLabelType="Auto"
+    ></ejs-dropdownlist>
+    <div class="text-center">List of loads:</div>
+    <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' height="340" [editSettings]='editSettings'>
+        <e-columns>
+            <e-column field='OrderID' headerText='Factory Name'  textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='CustomerID' headerText='Load Name'  textAlign='Right' [validationRules]='customeridrules'></e-column>
+            <e-column field='Freight' headerText='Function'  format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+            <e-column field='ShipCountry' headerText='Type'  editType='dropdownedit' [edit]='editparams'></e-column>
+            <e-column headerText='Manage Records'  [commands]='commands'></e-column>
+        </e-columns>
+    </ejs-grid>
+    <button
+      ejs-button
+      class="e-danger mt-2"
+      style="position: absolute; right: 10px"
+    >
+      add
+    </button>
+  </div>
+</div>

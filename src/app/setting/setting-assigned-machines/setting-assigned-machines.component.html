@@ -1,0 +1,60 @@
+<div class="p-2" style="height: calc(100% - 10px)">
+  <!-- <ejs-grid
+    [dataSource]="data"
+    locale="en-US"
+    allowPaging="true"
+    height="100%"
+    [pageSettings]="initialPage"
+  >
+    <e-columns>
+      <e-column field="machineID" headerText="Machine ID"></e-column>
+      <e-column field="factory" headerText="Factory ID"></e-column>
+      <e-column field="line" headerText="Line ID"></e-column>
+      <e-column
+        field="machineType"
+        headerText="Machine Type"
+        format="yMd"
+      ></e-column>
+      <e-column
+        field="machineFunctionality"
+        headerText="Machine Functionality"
+        format="C2"
+      ></e-column>
+      <e-column field="ratedSpeed" headerText="Rated Speed"></e-column>
+    </e-columns>
+  </ejs-grid> -->
+
+  <ejs-grid
+    [dataSource]="data"
+    allowPaging="true"
+    [pageSettings]="pageSettings"
+    [editSettings]="editSettings"
+    height="100%"
+    (commandClick)='clickHandler($event)'
+  >
+    <e-columns>
+      <e-column field="machineID" headerText="Machine ID" isPrimaryKey='true'></e-column>
+      <e-column field="factory" headerText="Factory ID" editType='dropdownedit' [edit]='countryParams'></e-column>
+      <e-column field="line" headerText="Line ID" editType='dropdownedit' [edit]='stateParams'></e-column>
+      <e-column
+        field="machineType"
+        headerText="Machine Type"
+        format="yMd"
+        editType='dropdownedit' [edit]='editparams'
+      ></e-column>
+      <e-column
+        field="machineFunctionality"
+        headerText="Machine Function"
+        format="C2"
+        editType='dropdownedit' [edit]='editparams'
+      ></e-column>
+      <e-column field="ratedSpeed"   headerText="Rated Speed" editType='numericedit' [validationRules]='freightrules'></e-column>
+      <e-column field="useInCalculation"  [visible]="false"  headerText="use In Calculation"></e-column>
+      <e-column field="id"  headerText="id" [visible]="false"></e-column>
+      <e-column
+        headerText="Manage Records"
+        [commands]="commands"
+      ></e-column>
+    </e-columns>
+  </ejs-grid>
+</div>

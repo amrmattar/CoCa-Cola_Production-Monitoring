@@ -1,0 +1,133 @@
+.machines-stat{
+    padding: 20px ;
+    height: calc(100vh - 101px);
+    width: 100%;
+    overflow: auto;
+    color: #003F5C;
+
+    p {
+    margin-bottom: 0.4rem;
+}
+    .machines-full-left{
+        width: 35%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 0px 2px;
+    }
+    .machines-full-middle{
+        width: calc(65% - 30px);
+        margin-left:  15px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 0px 2px;
+    }
+    .machines-full-right{
+        width: 25%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 0px 2px;
+    }
+    .machines-full-title{
+        line-height: 35px;
+        border-bottom: 1px solid rgb(220, 220, 220);
+        svg{
+            margin: 0px 7px;
+        }
+    }
+    .machines-full-body{
+        span{
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 2px;
+            display: block;
+            text-align: center;
+            line-height: 100%;
+            sub{
+                position: relative;
+                top: 0px;
+                margin-left: 5px;
+            }
+        }
+        .row-span{
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #fff;
+          background-color: #003F5C;
+          padding: 10px 5px;
+          border-radius: 6px;
+          // display: inline-block;
+          margin: 0px 160px;
+        }
+        p{
+          font-size: 1.2rem;
+          text-align: center;
+          font-weight: 600;
+          color: #003F5C;
+        }
+        .progress{
+            height: 10px;
+            background-color: #B2BEC39C;
+            .progress-bar{
+                background-color: #FF5400;
+            }
+        }
+
+        .progress-bar-position{
+            margin-top: 12%;
+        }
+        .progress-bar-position-mid{
+            margin-top: 1.5%;
+        }
+        .progress-bar-position-2{
+            margin-top: 6%;
+            position: relative;
+            left: -15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .prog-circ-value{
+            position: relative;
+            top: -15px;
+        }
+        .prog-circ-value-font{
+            font-size: 0.9rem;
+        }
+        .progress-bar-sub{
+            text-align: left;
+            color: #8D9192;
+            font-weight: bold;
+            margin-left: 5px;
+            margin-top: 2px;
+        }
+    }
+
+
+    .machine-stat-charts{
+        height: 400px;
+        background-color: #fff;
+        margin-top: 20px;
+        border-radius: 10px;
+        svg{
+            margin: 0px 13px;
+        }
+    }
+
+    
+    .machine-stat-charts-tabs{
+        display: inline-block;
+        float: right;
+        margin-right: 20px;
+        cursor: pointer;
+        color: #8D9192;
+        font-size: 0.9rem;
+        padding: 0px 8px;
+        height: 35px;
+    }
+    .active-tab{
+        color: #F40009;
+        border-bottom: 3px solid #F40009;
+    }
+    .machine-stat-charts-body{
+        height: 365px;
+    }
+}

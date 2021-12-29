@@ -1,0 +1,44 @@
+.circle-progress{
+    width: 100%;
+    position: relative;
+    left: -6px;
+}
+
+#label-container_Circularprogress{
+    stroke: #08415C !important;
+    stroke-width: 10px;
+    position: relative;
+    left: -20px;
+    
+}
+#label-container_Circulartrack{
+    stroke-width: 8px;
+    
+}
+.oee{
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #08415C;
+    width: 141px;
+}
+#point1{
+    position: relative;
+    top: -7px;
+    font-weight: bold;
+}
+.oee-circle-compair{
+    position: relative;
+    height: 0px;
+    top: -89px;
+    left: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.progresstitle{
+                position: relative;
+                left: -2px;
+                width: 140px;
+                font-size: 16px;
+                font-weight: bold;
+            }

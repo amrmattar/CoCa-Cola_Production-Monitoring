@@ -1,0 +1,75 @@
+<div class="dashboard-factories row">
+    <div class="col-3">
+        <div class="factory-card shadow">
+            <div class="factory-card-title">Factory Name</div>
+            <div class="factory-card-body row">
+                <div class="col-8 row-height left-factory-card" >
+                    <img src="../../../assets/img/speed.png" alt="" srcset="">
+                    Actual speed
+                </div>
+                <div class="col-4 row-height right-factory-card">5,000 <sub> L/s</sub></div>
+                <div class="col-8 row-height left-factory-card" >
+                    <img src="../../../assets/img/production.png" alt="" srcset="">
+                    Actual production
+                </div>
+                <div class="col-4 row-height right-factory-card">20,000 <sub> L</sub></div>
+                <div class="col-8 row-height left-factory-card" >
+                    <img src="../../../assets/img/cycle.png" alt="" srcset="">
+                    Last hour cycle time
+                </div>
+                <div class="col-4 row-height right-factory-card">20 <sub> s</sub></div>
+                <div class="col-8 row-height left-factory-card" >
+                    <img src="../../../assets/img/active.png" alt="" srcset="">
+                    Ratio of active lines
+                </div>
+                <div class="col-4 row-height right-factory-card">5:2</div>
+                <div class="col-6" style="padding: 0;">
+                    <div class="line"></div>
+                </div>
+                <div class="col-3 text-center line-title" st>Last Shift</div>
+                <div class="col-3" style="padding: 0;">
+                    <div class="line"></div>
+                </div>
+                <div class="col-12 row" style="position: relative; left: -5px;">
+                    <div class="col-4 circleprog">
+                        <ejs-progressbar #annotation1 id='label-container1' [type]='type1' [maximum]='max1' [minimum]='min1'
+                            [value]='value1' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                            [startAngle]='startAngle1' [endAngle]='endAngle1'  progressColor="#FF9F1C">
+                        </ejs-progressbar>
+                    </div>
+                    <div class="col-4">
+                        <ejs-progressbar #annotation2 id='label-container2' [type]='type1' [maximum]='max1' [minimum]='min1'
+                        [value]='value2' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                        [startAngle]='startAngle1' [endAngle]='endAngle1'  progressColor="#00D1DE">
+                    </ejs-progressbar>
+                </div>
+                <div class="col-4">
+                    <ejs-progressbar #annotation3 id='label-container3' [type]='type1' [maximum]='max1' [minimum]='min1'
+                    [value]='value3' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                    [startAngle]='startAngle1' [endAngle]='endAngle1' progressColor="#CA4E82">
+                </ejs-progressbar>
+            </div>
+                    <div class="col-4 text-center">
+                        <div class="progresstitle">OEE</div>
+                    </div>
+                    <div class="col-4 text-center ">
+                        <div class="progresstitle">SLE</div>
+                    </div>
+                    <div class="col-4 text-center ">
+                        <div class="progresstitle">USLE</div>
+                    </div>
+                </div>
+                <div class="col-8 row-height left-factory-card" >
+                    <img src="../../../assets/img/volume.png" alt="" srcset="">
+                    Production volume
+                </div>
+                <div class="col-4 row-height right-factory-card">500 <sub> L</sub></div>
+                <div class="col-8 row-height left-factory-card" >
+                    <img src="../../../assets/img/quality.png" alt="" srcset="">
+                    Production quality
+                </div>
+                <div class="col-4 row-height right-factory-card">5,000</div>
+            </div>
+        </div>
+    </div>
+</div>

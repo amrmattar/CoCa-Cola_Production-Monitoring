@@ -1,0 +1,12 @@
+.planning-body{
+    margin: 20px;
+    height: calc(100vh - 90px);
+    width: calc(100% - 40px);
+    display: flex;
+    .planning-left{
+        width: 70%;
+    }
+    .planning-right{
+        width: 30%;
+    }
+}

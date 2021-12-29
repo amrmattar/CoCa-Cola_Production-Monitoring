@@ -1,0 +1,219 @@
+
+.planning-route{
+    height: 100%;
+    width: 100%;
+    .planning-route-title{
+        line-height: 35px;
+        color: #003F5C;
+        margin-left: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        height: 35px;
+    }
+    .planning-route-split-btn{
+        margin: 7px;
+        margin-left: auto;
+        
+        height: 35px;
+    }
+}
+
+.planning-route-full-Set-Time{
+    height: calc( 100% - 40px);
+    width: 100%;
+    display: flex;
+    .Operation-word{
+        width: 0px;
+        height: 0px;
+        transform: rotate(-90deg);
+        position: relative;
+        top: 60%;
+        left: -7px;
+        font-weight: 600;
+        color: #4C788D;
+    }
+    .planning-route-side-stepper{
+        margin-top: 70px;
+        width: 70px;
+        height: calc(100% - 70px);
+        text-align: center;
+        .side-stepper-circle{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 15px;
+            background-color: #fff;
+            svg{
+                margin-top: 7px;
+            }
+        }
+        .side-stepper-circle-active{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 20px;
+            background-color: #F40009;
+            svg{
+                margin-top: 2px;
+            }
+        }
+        .side-stepper-circle-done{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 15px;
+            background-color: #2E4A79;
+            svg{
+                margin-top: 7px;
+            }
+        }
+        .side-stepper-line{
+            height: calc((100% - 300px)/3);
+            width: 2px;
+            margin: auto;
+            border-radius: 50px;
+            background-color: #4C788DCC;
+        }
+    }
+    .planning-route-content{
+        width: calc(100% - 70px) ;
+        height: 100%;
+        .route-word{
+            height: 0px;
+            position: relative;
+            left: 50%;
+            font-weight: 600;
+            color: #4C788D;
+        }
+    .planning-route-top-stepper{
+        width: 100% ;
+        height: 70px;
+        line-height: 70px;
+        display: flex;
+        .stepper-number{
+            position: relative;
+            top: -15px;
+            left: 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #4C788D;
+        }
+        .side-stepper-circle{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 15px;
+            background-color: #fff;
+        }
+        .side-stepper-circle-active{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 15px;
+            background-color: #fff;
+        }
+        .side-stepper-line{
+            width: calc((100% - 300px)/4);
+            height: 3px;
+            margin: auto;
+            border-radius: 50px;
+            background-color: #4C788DCC;
+        }
+        .side-stepper-circle-2{
+            width: 170px;
+            height: 40px;
+            border-radius: 50px 6px 6px 50px;
+            margin: 15px;
+            background-color: #fff;
+            span{
+                position: relative;
+                top: -12px;
+                left: 15px;
+                color: #4C788D;
+            }
+            .stepper-plus-title{
+                position: relative;
+                top: -15px;
+                left: 35px;
+                font-weight: 600;
+                color: #4C788D;
+            }
+        }
+        .side-stepper-line-2{
+            width: calc((100% - 200px)/2);
+            height: 3px;
+            margin: auto;
+            border-radius: 50px;
+            display: flex;
+            .side-stepper-line-2-dots{
+            width: calc(4% - 4px);
+            height: 100%;
+            margin: auto;
+            border-radius: 50px;
+            background-color: #4C788DCC;
+            }
+        }
+    }
+    .planing-wrapper{
+        height: calc(100% - 70px);
+        width: 100%;
+        display: flex;
+    .planning-side-stepper-titles{
+        height: 100%;
+        .planning-side-stepper-title-fake{
+            height: 70px;
+            p{
+                margin-bottom: 0;
+                line-height: 25px;
+            }
+            .first{
+                font-size: 1rem;
+                font-weight: 600;
+                padding-top: 11px;
+                color: #003F5C;
+            }
+            .last{
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #003F5C;
+            }
+        }
+        .planning-side-stepper-title-real{
+            height: calc((100% - 300px)/3);
+        }
+    }
+    .planning-components{
+        height: 100%;
+        flex-grow: 100;
+        .change-component{
+            height: calc(100% - 60px);
+            overflow: auto;
+        }
+        .footer-component{
+            height: 35px;
+            line-height: 35px;
+            button{
+                float: right;
+                margin: 5px;
+                span{
+                    position: relative;
+                    top: 2px;
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}
+    }
+}
+
+
+.e-search:before{
+    content:'\e735';
+}
+.e-plus-small:before{
+    content:'\e7f9';
+}

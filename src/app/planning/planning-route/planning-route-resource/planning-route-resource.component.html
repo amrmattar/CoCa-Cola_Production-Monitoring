@@ -1,0 +1,29 @@
+<div class="planning-resource-full">
+    <div class="add-matrial-btn ">
+        <button ejs-button style="border-radius: 10px; border: 2px solid #2E4A79; color: #2E4A79; float: right; margin: 10px;" (click)="addMatrial()">
+            <img src="../../../../assets/img/Material.png" alt="" srcset="">
+            ADD Material
+        </button>
+    </div>
+    <div class=" planning-resource-content " *ngFor="let resource of resources">
+        <div class="col-6 " style="margin-right: 10px;">
+            <div class="resource-section shadow">
+                <div class="p-2 pt-3">
+                <ejs-dropdownlist id='ddlelement'   #samples [dataSource]='data' [placeholder]='placeholder'></ejs-dropdownlist>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="resource-section shadow">
+                <div class="p-2 pt-3" style="display: flex;">
+                <div class="quantity-resource" >
+                    <ejs-textbox  placeholder="Quantity" ></ejs-textbox>
+                </div>
+                <div class="resource-unit">
+                    <ejs-dropdownlist id='ddlelement2'  #samples [dataSource]='data' placeholder=' Unit'></ejs-dropdownlist>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

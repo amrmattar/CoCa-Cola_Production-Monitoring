@@ -1,0 +1,194 @@
+<div class="time-line-full shadow">
+    <div class="time-line-full-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+            <defs>
+                <style>
+                    .time-linea,
+                    .time-lineb {
+                        fill: none;
+                    }
+
+                    .time-lineb {
+                        stroke: #2c3e50;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-width: 1.5px;
+                    }
+                </style>
+            </defs>
+            <path class="time-linea" d="M0,0H22V22H0Z" />
+            <path class="time-lineb" d="M3,11.333H6.667l2.75,7.333L13.083,4l2.75,7.333H19.5"
+                transform="translate(-0.25 -0.333)" />
+        </svg>
+        <span>Time line</span>
+    </div>
+    <div class="time-line-full-body row pb-2" *ngIf="line1Null !=null">
+      <div class="row " style="position: relative;
+        top: -20px;">
+
+         
+
+
+
+
+
+
+
+<!-- 
+
+<div class="col-12" id="history-chart" >
+  <div class="row ">
+    <div class="col-1 h-5 text-center time-line-full-title1">
+      <p>ALL</p>
+    </div>
+    <div class="col-11 " style="height: 60px;">
+      <apx-chart
+      [series]="line1Timeline.series"
+      [chart]="line1Timeline.chart"
+      [fill]="line1Timeline.fill"
+      [grid]="line1Timeline.grid"
+      [dataLabels]="line1Timeline.dataLabels"
+      [plotOptions]="line1Timeline.plotOptions"
+      [xaxis]="line1Timeline.xaxis"
+      [yaxis]="line1Timeline.yaxis"
+      [tooltip]="line1Timeline?.tooltip"
+      [legend]="line1Timeline?.legend"
+      [title]="line1Timeline?.title"
+    ></apx-chart>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- *ngIf="line1Null !=null" -->
+        <div class="col-12" id="history-chart" >
+          <div class="row ">
+            <div class="col-1 h-5 text-center time-line-full-title1">
+              <p>Line 1</p>
+            </div>
+            <div class="col-11 " style="height: 60px;">
+              <apx-chart
+              [series]="line1Timeline.series"
+              [chart]="line1Timeline.chart"
+              [fill]="line1Timeline.fill"
+              [grid]="line1Timeline.grid"
+              [dataLabels]="line1Timeline.dataLabels"
+              [plotOptions]="line1Timeline.plotOptions"
+              [xaxis]="line1Timeline.xaxis"
+              [yaxis]="line1Timeline.yaxis"
+              [tooltip]="line1Timeline?.tooltip"
+              [legend]="line1Timeline?.legend"
+              [title]="line1Timeline?.title"
+            ></apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row ">
+            <div class="col-1 h-5 text-center time-line-full-title1">
+              <p>Line 2</p>
+            </div>
+            <div class="col-11 " style="height: 60px;">
+              <apx-chart
+              [series]="line2Timeline.series"
+              [chart]="line2Timeline.chart"
+              [fill]="line2Timeline.fill"
+              [grid]="line2Timeline.grid"
+              [dataLabels]="line2Timeline.dataLabels"
+              [plotOptions]="line2Timeline.plotOptions"
+              [xaxis]="line2Timeline.xaxis"
+              [yaxis]="line2Timeline.yaxis"
+              [tooltip]="line2Timeline?.tooltip"
+              [legend]="line2Timeline?.legend"
+              [title]="line2Timeline?.title"
+              height="100px"
+            ></apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" >
+          <div class="row ">
+            <div class="col-1 h-5 text-center time-line-full-title1">
+              <p>Line 3</p>
+            </div>
+            <div class="col-11" style="height: 60px;">
+              <apx-chart
+              [series]="line3Timeline.series"
+              [chart]="line3Timeline.chart"
+              [fill]="line3Timeline.fill"
+              [grid]="line3Timeline.grid"
+              [dataLabels]="line3Timeline.dataLabels"
+              [plotOptions]="line3Timeline.plotOptions"
+              [xaxis]="line3Timeline.xaxis"
+              [yaxis]="line3Timeline.yaxis"
+              [tooltip]="line3Timeline?.tooltip"
+              [legend]="line3Timeline?.legend"
+              [title]="line3Timeline?.title"
+            ></apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" >
+          <div class="row ">
+            <div class="col-1 h-5 text-center time-line-full-title1">
+              <p>Line 4</p>
+            </div>
+            <div class="col-11" style="height: 60px;">
+              <apx-chart
+              [series]="line4Timeline.series"
+              [chart]="line4Timeline.chart"
+              [fill]="line4Timeline.fill"
+              [grid]="line4Timeline.grid"
+              [dataLabels]="line4Timeline.dataLabels"
+              [plotOptions]="line4Timeline.plotOptions"
+              [xaxis]="line4Timeline.xaxis"
+              [yaxis]="line4Timeline.yaxis"
+              [tooltip]="line4Timeline?.tooltip"
+              [legend]="line4Timeline?.legend"
+              [title]="line4Timeline?.title"
+            ></apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" >
+          <div class="row ">
+            <div class="col-1 h-5 text-center time-line-full-title1">
+              <p>Line 5</p>
+            </div>
+            <div class="col-11" style="height: 60px;">
+              <apx-chart
+              [series]="line5Timeline.series"
+              [chart]="line5Timeline.chart"
+              [fill]="line5Timeline.fill"
+              [grid]="line5Timeline.grid"
+              [dataLabels]="line5Timeline.dataLabels"
+              [plotOptions]="line5Timeline.plotOptions"
+              [xaxis]="line5Timeline.xaxis"
+              [yaxis]="line5Timeline.yaxis"
+              [tooltip]="line5Timeline?.tooltip"
+              [legend]="line5Timeline?.legend"
+              [title]="line5Timeline?.title"
+            ></apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

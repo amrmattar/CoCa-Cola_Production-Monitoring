@@ -1,0 +1,46 @@
+.time-line-full{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 0px 10px;
+
+    .time-line-full-title{
+        line-height: 35px;
+        border-bottom: 1px solid rgb(220, 220, 220);
+        background-color: #fff;
+
+        svg{
+            margin: 0px 7px;
+        }
+    }
+    .line-name{
+            color: #2C3E50;
+            font-size: 0.75rem;
+            font-weight: bold;
+            position: relative;
+            top: -5px;
+
+        }
+        .progress{
+            height: 10px;
+        }
+    .time-line-full-body{
+        width: 100%;
+        height: calc(100% - 38px);
+        overflow: auto;
+        
+        .time-line-position{
+            margin-top: 12px;
+        }
+        .time-line-full-title1{
+          position: relative;
+          top: 38px;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        // .shift-top{
+        //   height: 60px !important;
+        // }
+    }
+}

@@ -1,0 +1,15 @@
+<div class="chart-fram">
+        <ejs-chart style='display:block;' [chartArea]='chartArea' width='95%' height='325px' align='center' id='chartcontainer'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'  [tooltip]='tooltip'
+            (load)='load($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data'  fill='#96ADB8' columnWidth='0.15' type='StackingColumn' xName='x' yName='y' name='UK' width='2'> </e-series>
+                <e-series [dataSource]='data1' fill='#4C788D' columnWidth='0.15' type='StackingColumn' xName='x' yName='y' name='Germany' width='2'>
+                </e-series>
+                <e-series [dataSource]='data2' fill='#205068' columnWidth='0.15' type='StackingColumn' xName='x' yName='y' name='France' width='2'>
+                </e-series>
+                <e-series [dataSource]='data3' fill='#2C3E50' columnWidth='0.15' type='StackingColumn' xName='x' yName='y' name='Italy' width='2'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+</div>

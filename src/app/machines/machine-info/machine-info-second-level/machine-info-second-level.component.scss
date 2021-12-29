@@ -1,0 +1,152 @@
+.machines{
+    padding: 20px ;
+    height: calc(100vh - 101px);
+    width: 100%;
+    overflow: auto;
+    color: #003F5C;
+    p {
+    margin-bottom: 0.4rem;
+}
+    .machines-title{
+        color: #003F5C;
+        font-size: 1.1rem;
+        letter-spacing: 0px;
+        text-transform: capitalize;
+    }
+    .machines-content{
+        .machine-card{
+            background-color: #fff;
+            height: 300px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .machine-card-title{
+            line-height: 35px;
+            border-bottom: 1px solid rgb(220, 220, 220);
+            i{
+                font-size: 10px;
+                margin: 0px 12px;
+            }
+            span{
+                position: relative;
+                top: 1px;
+            }
+        }
+        .machine-card-body{
+            height: 312px;
+            .machine-card-body-type{
+                line-height: 45px;
+
+                svg{
+                    margin: 0px 10px;
+                }
+            }
+            .machine-card-data{
+                height: 130px;
+                margin-top: 8px;
+
+                .machine-card-data-cotent{
+                    margin-top: 5px;
+                    line-height: 20px;
+                    height: 20px;
+                    font-size: 0.8rem;
+                    padding-left: 25px;
+                    color: #08415C;
+                    font-weight: 600;
+                    .machine-card-data-cotent-1{
+                        font-size: 1.1rem;
+                    }
+                    .machine-card-data-cotent-2{
+                        margin-top: 5px;
+                        font-size: 0.8rem;
+                    }
+                }
+
+            }
+            .circlr-progbar-machine{
+                position: relative;
+                left: -5px;
+                span {
+                font-size: 0.85rem;
+                margin-top: 15px;
+                margin-bottom: 2px;
+                display: block;
+                text-align: center;
+                line-height: 100%;
+                color: #003F5C;
+                }
+            }
+            span{
+                font-weight: 600;
+            }
+            .machine-small-patch{
+                width: 80px;
+                height: 40px;
+                display: inline-block;
+                border-radius: 10px;
+                background-color: #F40009;
+                float: right;
+                margin: 5px 15px;
+                .machine-small-patch-content1{
+                    position: relative;
+                    top: -12px;
+                    margin: auto;
+                    left: 25px;
+                    font-size: 0.75rem;
+                    color: #fff;
+                }
+                .machine-small-patch-content2{
+                    position: relative;
+                    font-size: 0.75rem;
+                    left: -3px;
+                    top: 4px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .progress-circle-machine-title{
+        line-height: 30px;
+        position: relative;
+        top: -10px;
+        color: #08415C;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+}
+
+
+#label-container1_Circularprogress{
+    stroke: #08415C !important;
+    position: relative;
+    left: -30px;
+
+}
+#label-container1,#label-container2,#label-container3{
+    margin: auto;
+}
+#label-container2_Circularprogress{
+    stroke: #08415C !important;
+    position: relative;
+    left: -30px;
+
+}
+#label-container3_Circularprogress{
+    stroke: #08415C !important;
+    position: relative;
+    left: -30px;
+
+}
+
+
+#point1{
+    position: relative;
+    top: -7px;
+    font-weight: bold;
+
+}
+
+hr {
+    margin: auto;
+    width: 96%;
+}

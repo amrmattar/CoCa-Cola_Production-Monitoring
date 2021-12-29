@@ -1,0 +1,67 @@
+<div class="usage-ratio-top">
+  <div class="row " style="height: 100%;">
+    <div class="col-12 row" style="height: 40px;">
+      <div class="col-3">
+        <ejs-dropdownlist
+      #ddlelement
+      id="factory"
+      [(ngModel)]="factorySelect"
+      [dataSource]="source"
+      placeholder="Select Factory"
+      (change)="onChange($event)"
+      floatLabelType="Auto"
+    ></ejs-dropdownlist>
+      </div>
+      
+    </div>
+    <div class="col-12 row grid-size">
+      <div class="col-6">
+        <div class="text-center">[ Unallocated Energy Machines ]</div>
+        <ejs-grid
+          [dataSource]="data"
+          allowPaging="true"
+          [allowSelection]="true"
+          [selectionSettings]="selectOptions"
+          [pageSettings]="pageSettings"
+          (rowSelected)="rowSelected($event)"
+          height="360px"
+        >
+          <e-columns>
+            <e-column type="checkbox" width="50"></e-column>
+            <e-column field="OrderID" headerText="Factory Name" isPrimaryKey="true">
+            </e-column>
+            <e-column field="CustomerName" headerText="Load Name"></e-column>
+            <e-column field="OrderDate" headerText="Function"></e-column>
+            <e-column field="Freight" headerText="Type"></e-column>
+          </e-columns>
+        </ejs-grid>
+      </div>
+      <div class="col-6">
+
+
+      <div class="text-center">[ Allocated Energy Machines ]</div>
+      <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' height="360px" [editSettings]='editSettings'>
+          <e-columns>
+              <e-column field='OrderID' headerText='Factory Name'  textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+              <e-column field='CustomerID' headerText='Load Name'  textAlign='Right' [validationRules]='customeridrules'></e-column>
+              <e-column field='Freight' headerText='Function'  format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+              <e-column field='ShipCountry' headerText='Type'  editType='dropdownedit' [edit]='editparams'></e-column>
+              <e-column headerText='Manage Records'  [commands]='commands'></e-column>
+          </e-columns>
+      </ejs-grid>
+      </div>
+    </div>
+    <div class="col-12" style="height: 50px;">
+      <button
+    ejs-button
+    class="e-danger mt-2"
+    style="position: absolute; right: 30px; top: 30px;"
+  >
+    add
+  </button>
+    </div>
+    
+    </div>
+  
+</div>
+<!-- <div class="usage-ratio-top"></div> -->

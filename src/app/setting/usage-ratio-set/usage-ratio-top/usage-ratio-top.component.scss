@@ -1,0 +1,11 @@
+.usage-ratio-top{
+    height: calc(100vh - 150px);
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    padding: 15px;
+    // background-color: aqua;
+    .grid-size{
+        height: calc(100% - 200px);
+    }
+}

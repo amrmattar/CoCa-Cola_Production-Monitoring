@@ -1,0 +1,106 @@
+
+<div class="planning-route">
+    <div class="" style="display: flex; height: 40px;">
+    <div class="planning-route-title">Planning</div>
+    <div class="planning-route-split-btn ">
+        <div class='e-btn-group e-round-corner'>
+            <button ejs-button (click)="tapSide('Set Time')"  [ngClass]="(tapSidename == 'Set Time')?'e-danger':''">Set Time</button>
+            <button ejs-button (click)="tapSide('Avalability')"  [ngClass]="(tapSidename == 'Avalability')?'e-danger':''">Avalability</button>
+        </div>
+    </div>
+    </div>
+    <div class="planning-route-full-Set-Time" *ngIf="tapSidename == 'Set Time'">
+        <div class="Operation-word">Operation</div>
+    <div class="planning-route-side-stepper">
+        <div class="side-stepper-circle-active shadow" (click)="sideStepper(1)"  [ngClass]="(stepSide > 1)?'side-stepper-circle-done':''">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23.743" height="23.743" viewBox="0 0 23.743 23.743"><defs><style>.afunc{fill:rgba(0,0,0,0);}.bfunc{fill:#fff;}.cfunc{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="afunc" d="M0,0H23.743V23.743H0Z"/><rect class="bfunc" width="4" height="4" transform="translate(4 8)"/><rect class="bfunc" width="4" height="1" transform="translate(4 14)"/><line class="cfunc" y2="4" transform="translate(6 4)"/><line class="cfunc" y2="5" transform="translate(6 14)"/><rect class="bfunc" width="4" height="4" transform="translate(10 8)"/><rect class="bfunc" width="4" height="1" transform="translate(10 14)"/><line class="cfunc" y2="4" transform="translate(12 4)"/><line class="cfunc" y2="4" transform="translate(12 15)"/><rect class="bfunc" width="4" height="4" transform="translate(16 8)"/><rect class="bfunc" width="4" height="1" transform="translate(16 14)"/><line class="cfunc" y2="4" transform="translate(18 4)"/><line class="cfunc" y2="4" transform="translate(18 15)"/></svg>
+        </div>
+        <div class="side-stepper-line shadow"></div>
+        <div class="shadow" (click)="sideStepper(2)"  [ngClass]="timeStep">
+            <svg *ngIf="stepSide < 2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.atime,.btime{fill:none;}.btime{stroke:#4c788d;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="atime" d="M0,0H24V24H0Z"/><circle class="btime" cx="9" cy="9" r="9" transform="translate(3 3)"/><path class="btime" d="M12,7v5l3,3"/></svg>
+            <svg *ngIf="stepSide >= 2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.atime,.btime{fill:none;}.btime{stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="atime" d="M0,0H24V24H0Z"/><circle class="btime" cx="9" cy="9" r="9" transform="translate(3 3)"/><path class="btime" d="M12,7v5l3,3"/></svg>
+        </div>
+        <div class="side-stepper-line shadow"></div>
+        <div class="shadow" (click)="sideStepper(3)"  [ngClass]="machineStep">
+            <svg *ngIf="stepSide < 3" xmlns="http://www.w3.org/2000/svg" width="27.335" height="27.335" viewBox="0 0 27.335 27.335"><defs><style>.amachin,.bmachin{fill:none;}.bmachin{stroke:#4c788d;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><path class="amachin" d="M0,0H27.335V27.335H0Z"/><path class="bmachin" d="M4,14.126A9,9,0,0,1,11.876,22a6.751,6.751,0,0,0,3.375-5.626,10.126,10.126,0,0,0,6.751-9A3.375,3.375,0,0,0,18.626,4a10.126,10.126,0,0,0-9,6.751A6.751,6.751,0,0,0,4,14.126" transform="translate(0.667 0.667)"/><path class="bmachin" d="M7.508,14a7,7,0,0,0-3.5,7,7,7,0,0,0,7-3.5" transform="translate(0.512 1.815)"/><circle class="bmachin" cx="0.871" cy="0.871" r="0.871" transform="translate(16.258 9.335)"/></svg>
+            <svg *ngIf="stepSide >= 3" xmlns="http://www.w3.org/2000/svg" width="27.335" height="27.335" viewBox="0 0 27.335 27.335"><defs><style>.amachin,.bmachin{fill:none;}.bmachin{stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><path class="amachin" d="M0,0H27.335V27.335H0Z"/><path class="bmachin" d="M4,14.126A9,9,0,0,1,11.876,22a6.751,6.751,0,0,0,3.375-5.626,10.126,10.126,0,0,0,6.751-9A3.375,3.375,0,0,0,18.626,4a10.126,10.126,0,0,0-9,6.751A6.751,6.751,0,0,0,4,14.126" transform="translate(0.667 0.667)"/><path class="bmachin" d="M7.508,14a7,7,0,0,0-3.5,7,7,7,0,0,0,7-3.5" transform="translate(0.512 1.815)"/><circle class="bmachin" cx="0.871" cy="0.871" r="0.871" transform="translate(16.258 9.335)"/></svg>
+        </div>
+        <div class="side-stepper-line shadow"></div>
+        <div class="shadow" (click)="sideStepper(4)"  [ngClass]="resourceStep" >
+            <svg *ngIf="stepSide < 4" xmlns="http://www.w3.org/2000/svg" width="24.053" height="24.053" viewBox="0 0 24.053 24.053"><defs><style>.aresours,.bresours{fill:none;}.bresours{stroke:#4c788d;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><path class="aresours" d="M0,0H24.053V24.053H0Z"/><path class="bresours" d="M3,21.038V8.009L12.02,4l9.02,4.009V21.038" transform="translate(0.007 0.009)"/><path class="bresours" d="M13.013,13h4.009v8.018H7V15h6.013" transform="translate(0.016 0.029)"/><path class="bresours" d="M13.009,21.022V12a1,1,0,0,0-1-1H10a1,1,0,0,0-1,1v3.007" transform="translate(0.02 0.024)"/></svg>
+            <svg *ngIf="stepSide >= 4" xmlns="http://www.w3.org/2000/svg" width="24.053" height="24.053" viewBox="0 0 24.053 24.053"><defs><style>.aresours,.bresours{fill:none;}.bresours{stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><path class="aresours" d="M0,0H24.053V24.053H0Z"/><path class="bresours" d="M3,21.038V8.009L12.02,4l9.02,4.009V21.038" transform="translate(0.007 0.009)"/><path class="bresours" d="M13.013,13h4.009v8.018H7V15h6.013" transform="translate(0.016 0.029)"/><path class="bresours" d="M13.009,21.022V12a1,1,0,0,0-1-1H10a1,1,0,0,0-1,1v3.007" transform="translate(0.02 0.024)"/></svg>
+        </div>
+    </div>
+
+    <div class="planning-route-content">
+        <div class="route-word">ROUTE</div>
+    <div class="planning-route-top-stepper">
+        <div class="side-stepper-circle shadow">
+            <div class="stepper-number">1</div>
+        </div>
+        <div class="side-stepper-line shadow"></div>
+        <div class="side-stepper-circle shadow">
+            <div class="stepper-number">2</div>
+        </div>
+        <div class="side-stepper-line-2 shadow">
+            <div class="side-stepper-line-2-dots shadow" *ngFor="let hero of HEROES"></div>
+        </div>
+        <div class="side-stepper-circle-2 shadow">
+            <span class="e-icons e-plus-small"></span>
+            <span class="stepper-plus-title">Add Operation</span>
+        </div>
+    </div>
+    <div class="planing-wrapper">
+    <div class="planning-side-stepper-titles">
+        <div class="planning-side-stepper-title-fake" *ngIf="stepSide > 1">
+            <p class="first">Function</p>
+            <p class="last">Function Name</p>
+        </div>
+        <div class="planning-side-stepper-title-real"></div>
+        <div class="planning-side-stepper-title-fake" *ngIf="stepSide > 2">
+            <p class="first">Date | Time</p>
+            <p class="last">31 Oct. 2220</p>
+        </div>
+        <div class="planning-side-stepper-title-real"></div>
+        <div class="planning-side-stepper-title-fake" *ngIf="stepSide > 3">
+            <p class="first">Machine</p>
+            <p class="last">Machine Name</p>
+        </div>
+        <div class="planning-side-stepper-title-real"></div>
+        <div class="planning-side-stepper-title-fake" *ngIf="stepSide > 4">
+            <p class="first">Resources</p>
+            <p class="last">Material Name 3kg </p>
+        </div>
+    </div>
+    <div class="planning-components">
+        <div class="change-component">
+            <app-planning-route-function *ngIf="stepSide == 1"></app-planning-route-function>
+            <app-planning-route-time *ngIf="stepSide == 2"></app-planning-route-time>
+            <app-planning-route-machine *ngIf="stepSide == 3"></app-planning-route-machine>
+            <app-planning-route-resource *ngIf="stepSide == 4"></app-planning-route-resource>
+        </div>
+        <div class="footer-component">
+            <!-- <button ejs-button class="e-info" disabled><span class="e-icons e-search"></span>Save Route</button> -->
+            <button ejs-button  [disabled]="stepSide<4"><span class="e-icons e-search" style="border-radius: 14px; color: #4c788d;"></span>Save Prototype</button>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

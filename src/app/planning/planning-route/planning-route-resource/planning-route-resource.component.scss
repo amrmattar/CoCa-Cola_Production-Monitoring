@@ -1,0 +1,24 @@
+
+    .add-matrial-btn{
+        width: 100%;
+        height: 65px;
+    }
+.planning-resource-content{
+    margin: 10px  30px;
+    
+    display: flex;
+    .resource-section{
+        background-color: #fff;
+        border-radius: 10px;
+        height: 60px;
+    }
+    .quantity-resource{
+        width: 60%;
+        .e-control input.e-input, .e-control .e-input-group input, .e-control .e-input-group input.e-input, .e-control .e-input-group.e-control-wrapper input, .e-control .e-input-group.e-control-wrapper input.e-input, .e-control .e-float-input input, .e-control .e-float-input.e-control-wrapper input, .e-control.e-input-group input, .e-control.e-input-group input.e-input, .e-control.e-input-group.e-control-wrapper input, .e-control.e-input-group.e-control-wrapper input.e-input, .e-control.e-float-input input, .e-control.e-float-input.e-control-wrapper input {
+    border-right: 1px solid lightgray;
+}
+    }
+    .resource-unit{
+        width: 40%;
+    }
+}

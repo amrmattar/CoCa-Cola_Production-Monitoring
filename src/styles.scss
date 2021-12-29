@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-inputs/styles/material.css';
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import '../node_modules/@syncfusion/ej2-angular-navigations/styles/material.css';
+@import "../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-grids/styles/material.css';
+@import "../node_modules/@syncfusion/ej2-angular-layouts/styles/material.css";
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-icons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-dropdowns/styles/material.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 20%;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8d9da0;
+  }
+
+///////////////////////////// sync calender over write///////////////////
+    .e-calendar .e-footer-container, .e-bigger.e-small .e-calendar .e-footer-container {
+    display: none;
+}
+
+
+//////////////////////////cusrome dashboard ///////////////
+
+
+
+#default_dashboard {
+    padding: 10px;
+}
+
+#default_dashboard.e-dashboardlayout.e-control .e-panel:hover .e-close-icon {
+    display: block;
+}
+
+#default_dashboard .e-panel .e-panel-container .text-align {
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+
+#default_dashboard.e-dashboardlayout.e-control .e-panel .e-template-icon {
+    padding: 10px;
+    float: right;
+    display: none;
+}
+
+#default_dashboard{
+    display: block;
+  }
+
+#default_dashboard.e-dashboardlayout.e-control .e-panel .e-close-icon::before {
+    content: '\e100';
+    font-size: 12px;
+    font-family: 'ej-icon';
+}
+
+// @font-face {
+//     font-family: 'ej-icon';
+//     src:
+//     url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMjdtQ/IAAAEoAAAAVmNtYXDhEOFVAAABiAAAADZnbHlmq8jV4gAAAcgAAAFQaGVhZBSREIsAAADQAAAANmhoZWEIUAQDAAAArAAAACRobXR4CAAAAAAAAYAAAAAIbG9jYQCoAAAAAAHAAAAABm1heHABDQCUAAABCAAAACBuYW1lWD3y/QAAAxgAAAIlcG9zdMl9cHoAAAVAAAAALwABAAAEAAAAAFwEAAAAAAAD8wABAAAAAAAAAAAAAAAAAAAAAgABAAAAAQAAjGeuW18PPPUACwQAAAAAANi/5c0AAAAA2L/lzQAAAAAD8wP0AAAACAACAAAAAAAAAAEAAAACAIgAAQAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA4QDhAAQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACIAAAAEAAQAAQAA4QD//wAA4QD//wAAAAEABAAAAAEAAAAAAAAAqAAAAAEAAAAAA/MD9ACHAAAJAi8GKwEPDR0BHwYJAQ8GHQEfDTsBPwYJAR8GOwE/Di8HCQE/Bj0BLw0rAQ8FA3T+jP6MBQYHBgcHCAcHBwcHBwYGBgUFAwMDAgEBAgMDAwUFAXT+jAUFAwMDAgEBAgMDAwUFBgYGBwcHBwcHBwgGBwYHBQF0AXQFBgcGBwcIBwcHBwcHBgYGBQQEAwMBAQEBAQEDAwQEBf6MAXQFBQMDAwIBAQIDAwMFBQYGBgcHBwcHBwgHBwYHBgPe/owBdAUFAwMDAgEBAgMDAwUFBgYGBwcHBwcHCAcGBwYHBf6M/owFBwYHBgcIBwcHBwcHBgYGBQUDBAICAQECAgQDBQUBdP6MBQUDBAICAQECAgQDBQUGBgYHBwcHBwcIBwYHBgcFAXQBdAYGBgcHBwcHBwcHBwcGBgYFBQMEAgIBAQIDAwMFAAAAEgDeAAEAAAAAAAAAAQAAAAEAAAAAAAEABwABAAEAAAAAAAIABwAIAAEAAAAAAAMABwAPAAEAAAAAAAQABwAWAAEAAAAAAAUACwAdAAEAAAAAAAYABwAoAAEAAAAAAAoALAAvAAEAAAAAAAsAEgBbAAMAAQQJAAAAAgBtAAMAAQQJAAEADgBvAAMAAQQJAAIADgB9AAMAAQQJAAMADgCLAAMAAQQJAAQADgCZAAMAAQQJAAUAFgCnAAMAAQQJAAYADgC9AAMAAQQJAAoAWADLAAMAAQQJAAsAJAEjIGVqLWljb25SZWd1bGFyZWotaWNvbmVqLWljb25WZXJzaW9uIDEuMGVqLWljb25Gb250IGdlbmVyYXRlZCB1c2luZyBTeW5jZnVzaW9uIE1ldHJvIFN0dWRpb3d3dy5zeW5jZnVzaW9uLmNvbQAgAGUAagAtAGkAYwBvAG4AUgBlAGcAdQBsAGEAcgBlAGoALQBpAGMAbwBuAGUAagAtAGkAYwBvAG4AVgBlAHIAcwBpAG8AbgAgADEALgAwAGUAagAtAGkAYwBvAG4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAdQBzAGkAbgBnACAAUwB5AG4AYwBmAHUAcwBpAG8AbgAgAE0AZQB0AHIAbwAgAFMAdAB1AGQAaQBvAHcAdwB3AC4AcwB5AG4AYwBmAHUAcwBpAG8AbgAuAGMAbwBtAAAAAAIAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgECAQMABWNsb3NlAAAA) format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+#default_dashboard .text-align {
+    line-height: 160px;
+}
+.e-dashboardlayout.e-control .e-panel.e-panel-transition {
+    transition: top 0.5s, left 0.5s;
+    border-radius: 10px;
+}
+#default_dashboard.e-dashboardlayout.e-control .e-panel .e-close-icon {
+    cursor: pointer !important;
+    position: relative !important;
+    display: block !important;
+    top: 2px !important;
+    float: right !important;
+    margin-right: 5px !important;
+}
+
+.e-close-icon::before {
+    content: '\e100';
+    font-size: 12px;
+    font-family: 'ej-icon';
+}
+
+
+
+.e-popup.e-popup-open.e-dialog {
+    display: inline-flex;
+    max-height: 200px !important;
+}
+
+.closex{
+    element.style {
+    cursor: pointer !important;
+    position: relative !important;
+    display: block !important;
+    top: 2px !important;
+    float: right !important;
+    margin-right: 5px !important;
+}
+}
+.e-dashboardlayout.e-control .e-panel {
+    border-radius: 10px;
+}
+
+.e-dialog .e-dlg-header-content + .e-dlg-content {
+    overflow: hidden;
+}
+
+
+.e-popup.e-popup-open.e-dialog {
+    display: inline-flex;
+    height: 450px !important;
+    max-height: 450px !important;
+    width: 450px !important;
+}
+
+
+
+///////////////////////////////planning-function
+
+
+    #games_popup {
+        box-shadow: 0px 0px 0px 0px !important ;
+    }
+
+
+
+
+    .e-grid .e-gridcontent {
+    background-color: #fff;
+    height: calc(100% - 94px) !important;
+}
+
+hr{
+    padding: 0;
+    margin: 0;
+}

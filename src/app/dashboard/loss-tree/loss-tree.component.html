@@ -1,0 +1,208 @@
+<div class="current-activity-full shadow">
+  <div class="current-activity-full-title">
+    <img src="../../../assets/img/usage.png" alt="" srcset="" />
+    <span>Loss Tree</span>
+  </div>
+  <div class="current-activity-full-body" *ngIf="totalbottels > 0">
+    <div class="loss-tree-col">
+      <div class="loss-tree-col-wall"></div>
+      <div class="loss-tree-col-body-loss" [style]="totalLoss">
+        <div class="loss-tree-col-body-sections">
+          <div class="off-label">OFF</div>
+        </div>
+        <div class="loss-tree-col-body-sections">
+          <div class="loss-bar"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          {{
+            totalLosstit
+              | number: "1.0-1"
+          }}%
+        </div>
+      </div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain">
+        <div class="loss-tree-col-body-sections">
+          <div class="on-label">ON</div>
+        </div>
+        <div class="loss-tree-col-body-sections">
+          <div class="gain-bar"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          {{
+            totalGaintit
+              | number: "1.0-1"
+          }}%
+        </div>
+      </div>
+      <div class="loss-tree-col-wall"></div>
+    </div>
+    
+
+    <div class="loss-tree-col">
+      <div class="loss-tree-col-wall"></div>
+      <div class="loss-tree-col-body-loss" [style]="totalLoss"></div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain">
+        <div class="loss-tree-col-body-sections"></div>
+        <div class="loss-tree-col-body-sections gain-bar-bg">
+          <div class="gain-bar-sub" [style]="QualityLoss"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          <div
+            class="percent-sub"
+            [style]="QualityLoss"
+            style="bottom: 10px !important"
+          >
+            {{
+              QualityLosstit
+                | number: "1.0-1"
+            }}%
+          </div>
+        </div>
+      </div>
+      <div class="loss-tree-col-wall text-center p-1" style="width: 90%">
+        Quality Loss
+      </div>
+    </div>
+
+    <div class="loss-tree-col">
+      <div class="loss-tree-col-wall"></div>
+      <div class="loss-tree-col-body-loss" [style]="totalLoss"></div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain">
+        <div class="loss-tree-col-body-sections"></div>
+        <div class="loss-tree-col-body-sections gain-bar-bg">
+          <div class="gain-bar-sub" [style]="SpeedLoss"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          <div class="percent-sub" [style]="SpeedLoss">
+            {{
+              SpeedLosstit
+                | number: "1.0-1"
+            }}%
+          </div>
+        </div>
+      </div>
+      <div class="loss-tree-col-wall text-center p-1" style="width: 90%">
+        Speed Loss
+      </div>
+    </div>
+
+ 
+
+
+
+
+
+    <div class="loss-tree-col">
+      <div class="loss-tree-col-wall p-2 text-center" style="width: 90%">
+        Break-down
+      </div>
+      <div class="loss-tree-col-body-loss" [style]="totalLoss">
+        <div class="loss-tree-col-body-sections"></div>
+        <div class="loss-tree-col-body-sections loss-bar-bg">
+          <div class="loss-bar-sub" [style]="Break_down"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          <div class="percent-sub" [style]="Break_down_Top">
+            {{Break_downtit | number: "1.0-1"}}%</div>
+        </div>
+      </div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain"></div>
+      <div class="loss-tree-col-wall"></div>
+    </div>
+
+
+
+
+
+
+
+    <div class="loss-tree-col">
+      <div class="loss-tree-col-wall py-2 text-center" style="width: 90%">
+        <div style="line-height: 13px">Cleaning process</div>
+      </div>
+      <div class="loss-tree-col-body-loss" [style]="totalLoss">
+        <div class="loss-tree-col-body-sections"></div>
+        <div class="loss-tree-col-body-sections loss-bar-bg">
+          <div class="loss-bar-sub" [style]="Cleansing_process"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          <div class="percent-sub" [style]="Cleansing_process_Top">{{Cleansing_processtit | number: "1.0-1"}}%</div>
+        </div>
+      </div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain"></div>
+      <div class="loss-tree-col-wall"></div>
+    </div>
+
+    <div class="loss-tree-col">
+      <div class="loss-tree-col-wall py-2 text-center" style="width: 90%">
+        <div style="line-height: 13px">Changeover</div>
+      </div>
+      <div class="loss-tree-col-body-loss" [style]="totalLoss">
+        <div class="loss-tree-col-body-sections"></div>
+        <div class="loss-tree-col-body-sections loss-bar-bg">
+          <div class="loss-bar-sub" [style]="Change_over_time"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          <div class="percent-sub" [style]="Change_over_time_Top" >{{Change_over_timetit | number: "1.0-1"}}%</div>
+        </div>
+      </div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain"></div>
+      <div class="loss-tree-col-wall"></div>
+    </div>
+
+    <!-- <div class="loss-tree-col">
+      <div class="loss-tree-col-wall p-2 text-center" style="width: 80%">
+        Idle
+      </div>
+      <div class="loss-tree-col-body-loss" [style]="totalLoss">
+        <div class="loss-tree-col-body-sections"></div>
+        <div class="loss-tree-col-body-sections loss-bar-bg">
+          <div class="loss-bar-sub" [style]="Idle"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          <div class="percent-sub" [style]="Idle_Top">{{Idletit | number: "1.0-1"}}%</div>
+        </div>
+      </div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain"></div>
+      <div class="loss-tree-col-wall"></div>
+    </div>
+
+ -->
+
+
+    
+    <div class="loss-tree-col">
+      <div class="loss-tree-col-wall p-2 text-center" style="width: 80%">
+        Stand_by_Time
+      </div>  
+      <div class="loss-tree-col-body-loss" [style]="totalLoss">
+        <div class="loss-tree-col-body-sections "></div>
+        <div class="loss-tree-col-body-sections loss-bar-bg">
+          <div class="loss-bar-sub" [style]="Idle"></div>
+          <div class="loss-bar-sub" [style]="standby"></div>
+        </div>
+        <div class="loss-tree-col-body-sections ms-1 percent">
+          <div class="percent-sub" [style]="Idle_Top">{{Idletit | number: "1.0-1"}}% (idle time)</div>
+          <div class="percent-sub" [style]="standby_Top">{{standbytit | number: "1.0-1"}}% </div>
+        </div>
+      </div>
+      <div class="loss-tree-col-body-gain" [style]="totalGain"></div>
+      <div class="loss-tree-col-wall"></div>
+    </div>
+
+
+    <div class="loss-tree-col" style="border-left: 1px solid lightgray;">
+      <div class="m-2 row" style="height: calc(100% - 35px);">
+        <div class="col-12 text-center" style=" border-bottom: 1px solid lightgray;line-height: 100%;height:50%;">
+        <p style="font-weight: bold; font-size: 0.8rem; margin-top: 20px; color: #08415C;">Minor Stopages</p>
+        <p style="font-size: 1.1rem;font-weight: bold;color: #8D9192;">{{Minor_stopstit | number: "1.0-1"}}%</p>
+      </div>
+        <div class="col-12 text-center" style="line-height: 100%;height:50%;">
+        <p style="font-weight: bold; font-size: 0.8rem; margin-top: 20px; color: #08415C;">Planned Downtime</p></div>
+      </div>
+    </div>
+  </div>
+  <div class=" warn-msg" *ngIf="!totalbottels">
+      <p>Resource is offline! </p>
+    </div>
+</div>

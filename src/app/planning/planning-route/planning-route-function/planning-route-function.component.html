@@ -1,0 +1,15 @@
+
+            <div class="full-route-function">
+                <div class="full-route-function-content">
+                    <div class="full-route-function-content-text-box shadow">
+                        <div class="m-3" style="position: relative; top: 10px;">
+                        <ejs-textbox  placeholder="Operation Name" cssClass="e-outline" floatLabelType="Auto"></ejs-textbox>
+                        </div>
+                    </div>
+                    <div class="full-route-function-content-dropdown shadow">
+                        <div class="m-3 " style="position: relative; top: 10px;">
+                            <ejs-dropdownlist id='games' #sample [dataSource]='sportsData' (change)='onChange($event)'  [fields]='fields' [placeholder]='waterMark' [popupHeight]='height' ></ejs-dropdownlist>
+                        </div>
+                    </div>
+                </div>
+            </div>

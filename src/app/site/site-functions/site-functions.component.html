@@ -1,0 +1,13 @@
+<div class="machines">
+    <p class="machines-title">Functions </p>
+    <ejs-grid [dataSource]='functions' allowPaging='true' (actionBegin)="onfunctionEdit($event)" height='500' allowResizing='true' [pageSettings]='pageSettings'
+        [editSettings]='editSettings'>
+                <e-columns>
+                    <e-column field='id' headerText='#' width='30' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+                    <e-column field='name' headerText='Name' width='120' [validationRules]='customeridrules'>
+                    </e-column>
+                    <e-column field='factoryName' headerText='Factory Name' isPrimaryKey='true' width='120' [validationRules]='freightrules'></e-column>
+                    <e-column headerText='Actions' width='30' textAlign='left'  [commands]='commands'></e-column>
+                </e-columns>
+    </ejs-grid>
+</div>

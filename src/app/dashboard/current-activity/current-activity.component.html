@@ -1,0 +1,188 @@
+<div class="current-activity-full shadow">
+   <div class="current-activity-full-title">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+    >
+      <defs>
+        <style>
+          .activitya,
+          .activityb {
+            fill: none;
+          }
+
+          .activityb {
+            stroke: #2c3e50;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.5px;
+          }
+        </style>
+      </defs>
+      <path class="activitya" d="M0,0H22V22H0Z" />
+      <path
+        class="activityb"
+        d="M3,11.333H6.667l2.75,7.333L13.083,4l2.75,7.333H19.5"
+        transform="translate(-0.25 -0.333)"
+      />
+    </svg>
+    
+    <span>Current Activity</span>
+  </div>
+  <div class="current-activity-full-body ">
+    <div class="row">
+      <div class="col-width"></div>
+      <div class="col-width row">
+        <div class="col-6 current-titlel-content">OEE</div>
+        <div class="col-6 current-titlel-content text-center"></div>
+      </div>
+      <div class="col-width row">
+        <div class="col-6 current-titlel-content">Avalability</div>
+        <div class="col-6 current-titlel-content text-center"></div>
+      </div>
+      <div class="col-width row">
+        <div class="col-6 current-titlel-content">Quality</div>
+        <div class="col-6 current-titlel-content text-center"></div>
+      </div>
+      <div class="col-width row">
+        <div class="col-6 current-titlel-content">Preformance</div>
+        <div class="col-6 current-titlel-content text-center"></div>
+      </div>
+
+      <div class="col-width row">
+        <div class="col-6 current-titlel-content">MTBF[h]</div>
+        <div class="col-6 current-titlel-content text-center"></div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="row" *ngFor="let i of currentActivity">
+      <hr style="margin-bottom: 0;">
+      <div class="col-width line-name">
+        <p>{{ i.lineId }}</p>
+        <div class="draw-fake {{ i.color }}"></div>
+      </div>
+      <div class="col-width color-1-1">
+        <div class="draw-fake {{ i.color }}" [style]="i.oeeStyle"></div>
+        <span class=" draw-fake-mark {{ i.txtcolor }}">{{ i.oee }}</span>
+        <span class=" draw-fake-compair " [ngStyle]="{'color':i.oeeDiff < 0 ? 'red' : 'rgb(0, 193, 0)' }" *ngIf="i.oeeDiff > 0 || i.oeeDiff < 0">
+          <i class="fas fa-caret-up" *ngIf="i.oeeDiff > 0 "></i>
+          <i class="fas fa-caret-down" *ngIf="i.oeeDiff < 0 "></i>
+          {{ i.oeeDiff }}%</span>
+      </div>
+      <div class="col-width color-1-1">
+        <div class="draw-fake {{ i.color }}" [style]="i.availabilityStyle"></div>
+        <span class=" draw-fake-mark {{ i.txtcolor }}">{{ i.availability }}</span>
+        <span class=" draw-fake-compair " [ngStyle]="{'color':i.uptimeDiff < 0 ? 'red' : 'rgb(0, 193, 0)' }" *ngIf="i.oeeDiff > 0 || i.oeeDiff < 0">
+          <i class="fas fa-caret-up" *ngIf="i.uptimeDiff > 0 "></i>
+          <i class="fas fa-caret-down" *ngIf="i.uptimeDiff < 0 "></i>
+          {{ i.uptimeDiff }}%</span>
+      </div>
+      <div class="col-width color-1-1">
+        <div class="draw-fake {{ i.color }}" [style]="i.qualityStyle"></div>
+        <span class=" draw-fake-mark {{ i.txtcolor }}">{{ i.quality }}</span>
+        <span class=" draw-fake-compair " [ngStyle]="{'color':i.uptimeDiff < 0 ? 'red' : 'rgb(0, 193, 0)' }" *ngIf="i.oeeDiff > 0 || i.oeeDiff < 0">
+          <i class="fas fa-caret-up" *ngIf="i.uptimeDiff > 0 "></i>
+          <i class="fas fa-caret-down" *ngIf="i.uptimeDiff < 0 "></i>
+          {{ i.uptimeDiff }}%</span>
+      </div>
+      <div class="col-width color-1-1">
+        <div class="draw-fake {{ i.color }}" [style]="i.performanceStyle"></div>
+        <span class=" draw-fake-mark {{ i.txtcolor }}">{{ i.performance }}</span>
+        <span class=" draw-fake-compair " [ngStyle]="{'color':i.uptimeDiff < 0 ? 'red' : 'rgb(0, 193, 0)' }" *ngIf="i.oeeDiff > 0 || i.oeeDiff < 0">
+          <i class="fas fa-caret-up" *ngIf="i.uptimeDiff > 0 "></i>
+          <i class="fas fa-caret-down" *ngIf="i.uptimeDiff < 0 "></i>
+          {{ i.uptimeDiff }}%</span>
+      </div>
+      <div class="col-width color-1-1">
+        <div class="{{ i.color }} mtbf-block shadow" >
+          <span class=" draw-fake-mark ">{{ i.mtbf }}</span>
+          
+          <div class=" draw-fake-compair " *ngIf="i.oeeDiff > 0 || i.oeeDiff < 0" [ngStyle]="{'color':i.mtbfDiff < 0 ? 'red' : 'rgb(0, 193, 0)' }" style="height: 0px;
+              left: 110px;
+              top: -16px;
+              width: 50px;">
+            <i class="fas fa-caret-up" *ngIf="i.mtbfDiff > 0 "></i>
+            <i class="fas fa-caret-down" *ngIf="i.mtbfDiff < 0 "></i>
+            {{ i.mtbfDiff }}H</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="mt-2" *ngIf="message == 'line'">
+      <ejs-chart
+        id="spline-chartcontainer"
+        align="center"
+        [chartArea]="chartArea"
+        width="100%"
+        style="display: block"
+        [primaryXAxis]="primaryXAxis"
+        height="160px"
+        [primaryYAxis]="primaryYAxis"
+        [tooltip]="tooltip"
+      >
+        <e-series-collection>
+          <e-series
+            [dataSource]="data1"
+            type="Spline"
+            fill="#457B9D"
+            xName="x"
+            yName="y"
+            name=""
+            width="3"
+            [marker]="marker"
+          >
+          </e-series>
+        </e-series-collection>
+      </ejs-chart>
+    </div>
+  </div> -->
+
+
+  <div class="machines-full-title ">
+                    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+    >
+      <defs>
+        <style>
+          .activitya,
+          .activityb {
+            fill: none;
+          }
+
+          .activityb {
+            stroke: #2c3e50;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.5px;
+          }
+        </style>
+      </defs>
+      <path class="activitya" d="M0,0H22V22H0Z" />
+      <path
+        class="activityb"
+        d="M3,11.333H6.667l2.75,7.333L13.083,4l2.75,7.333H19.5"
+        transform="translate(-0.25 -0.333)"
+      />
+    </svg>
+                    <span>Current Activity</span>
+                    <span class="machine-stat-charts-tabs" (click)="tabMachine('UPTIME')" [ngClass]="(tabChange =='UPTIME')?'active-tab':''">UPTIME</span>
+                    <span class="machine-stat-charts-tabs" (click)="tabMachine('MTBF[h]')" [ngClass]="(tabChange =='MTBF[h]')?'active-tab':''">MTBF[h]</span>
+                    <span class="machine-stat-charts-tabs" (click)="tabMachine('OEE')" [ngClass]="(tabChange =='OEE')?'active-tab':''">OEE</span>
+                </div>
+                <div class="machine-stat-charts-body">
+                    <app-current-spline-chart></app-current-spline-chart>
+                </div>
+</div>

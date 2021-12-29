@@ -1,0 +1,123 @@
+.current-activity-full {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 0px 10px;
+
+  .current-activity-full-title {
+    line-height: 35px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    img {
+      margin: 0px 7px;
+      height: 20px;
+    }
+  }
+  .current-activity-full-body {
+    width: 100%;
+    height: calc(100% - 38px);
+    overflow: auto;
+    padding: 5px;
+    display: flex;
+    .loss-tree-col {
+      width: 12.5%;
+      .loss-tree-col-wall {
+        height: 29px;
+        font-weight: bold;
+      }
+      .loss-tree-col-body-loss {
+        display: flex;
+        // height: calc(40% - 30px);
+        .loss-tree-col-body-sections {
+          width: 25%;
+          position: relative;
+          .loss-bar {
+            border-radius: 4px;
+            height: 100%;
+            width: 100%;
+            background-color: #f40009;
+          }
+          .off-label {
+            text-align: center;
+            position: absolute;
+            bottom: 4px;
+            left: 9px;
+            transform: rotate(-90deg);
+          }
+        }
+        .loss-bar-bg {
+          background-color: #fee5e6;
+          border-radius: 4px;
+          .loss-bar-sub {
+            background-color: #f40009;
+            border-radius: 4px;
+            width: 100%;
+            position: absolute;
+          }
+        }
+        .percent {
+          font-weight: bold;
+          font-size: 10px;
+        }
+        .percent-sub {
+          position: absolute;
+          margin-top: 7px;
+        }
+      }
+      .loss-tree-col-body-gain {
+        display: flex;
+        margin-top: 2px;
+        // height: calc(60% - 28px);
+
+        .loss-tree-col-body-sections {
+          width: 25%;
+          position: relative;
+          .gain-bar {
+            border-radius: 4px;
+            height: 100%;
+            width: 100%;
+            background-color: #2ec4b6;
+          }
+          .on-label {
+            text-align: center;
+            position: absolute;
+            bottom: 4px;
+            left: 9px;
+            transform: rotate(-90deg);
+          }
+        }
+        .gain-bar-bg {
+          background-color: #eaf9f8;
+          .gain-bar-sub {
+            background-color: #2ec4b6;
+            border-radius: 4px;
+            width: 100%;
+            position: absolute;
+          }
+        }
+        .percent {
+          font-weight: bold;
+          font-size: 10px;
+        }
+        .percent-sub {
+          position: absolute;
+          bottom: 12px !important;
+        }
+      }
+    }
+  }
+}
+.warn-msg{
+    text-align: center ;
+
+    p{
+      position: relative;
+      // top: -90px;
+        // padding-top: 15%;
+        display: inline-block;
+        vertical-align: middle;
+        color: red;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+    }
+}

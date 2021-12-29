@@ -1,0 +1,228 @@
+<div class="machines">
+  <p class="machines-title">Machines \ Information</p>
+  <div class="machines-content row">
+    <div class="col-4" *ngFor="let machine of machines; let i = index">
+      <div class="machine-card shadow">
+        <div class="machine-card-title">
+          <i class="fas fa-circle" style="color: #ff6c23"></i>
+          <span>Machine ID</span>
+        </div>
+        <div class="machine-card-body">
+          <div class="machine-card-body-type">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+            >
+              <defs>
+                <style>
+                  .machinea,
+                  .machineb {
+                    fill: none;
+                  }
+
+                  .machineb {
+                    stroke: #003f5c;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 1.8px;
+                  }
+                </style>
+              </defs>
+              <path class="machinea" d="M0,0H28V28H0Z" />
+              <path
+                class="machineb"
+                d="M4,14.5a9.333,9.333,0,0,1,8.167,8.167,7,7,0,0,0,3.5-5.833,10.5,10.5,0,0,0,7-9.333,3.5,3.5,0,0,0-3.5-3.5,10.5,10.5,0,0,0-9.333,7A7,7,0,0,0,4,14.5"
+                transform="translate(0.667 0.667)"
+              />
+              <path
+                class="machineb"
+                d="M7.508,14a7,7,0,0,0-3.5,7,7,7,0,0,0,7-3.5"
+                transform="translate(0.658 2.333)"
+              />
+              <circle
+                class="machineb"
+                cx="0.871"
+                cy="0.871"
+                r="0.871"
+                transform="translate(16.681 9.578)"
+              />
+            </svg>
+            <span>Machine Name: {{ machine.machineId }}</span>
+            <div class="machine-small-patch">
+              <span class="machine-small-patch-content1">OEE</span>
+              <span class="machine-small-patch-content2"
+                >{{ (machine.oee * 100).toFixed(2) }}%</span
+              >
+            </div>
+          </div>
+          <div class="row mt-2 circlr-progbar-machine" style="height: 120px">
+            <div class="col-4">
+              <ejs-progressbar
+                #annotation1
+                id="label-container{{ i }}1"
+                [type]="type1"
+                [maximum]="max1"
+                [minimum]="min1"
+                [value]="(machine.availability * 100).toFixed(2)"
+                width="125px"
+                title="jhn"
+                height="90px"
+                [animation]="animation"
+                (load)="load($event)"
+                [startAngle]="startAngle1"
+                [endAngle]="endAngle1"
+              >
+              </ejs-progressbar>
+              <div
+                class="progress-circle-machine-title text-center"
+                style="width: 125px"
+              >
+                Availability
+              </div>
+            </div>
+            <div class="col-4">
+              <ejs-progressbar
+                #annotation1
+                id="label-container{{ i }}2"
+                [type]="type1"
+                [maximum]="max1"
+                [minimum]="min1"
+                [value]="(machine.performance * 100).toFixed(2)"
+                width="125px"
+                title="jhn"
+                height="90px"
+                [animation]="animation"
+                (load)="load($event)"
+                [startAngle]="startAngle1"
+                [endAngle]="endAngle1"
+              >
+              </ejs-progressbar>
+              <div
+                class="progress-circle-machine-title text-center"
+                style="width: 125px"
+              >
+                Preformance
+              </div>
+            </div>
+            <div class="col-4">
+              <ejs-progressbar
+                #annotation1
+                id="label-container{{ i }}3"
+                [type]="type1"
+                [maximum]="max1"
+                [minimum]="min1"
+                [value]="(machine.quality * 100).toFixed(2)"
+                width="125px"
+                title="jhn"
+                height="90px"
+                [animation]="animation"
+                (load)="load($event)"
+                [startAngle]="startAngle1"
+                [endAngle]="endAngle1"
+              >
+              </ejs-progressbar>
+              <div
+                class="progress-circle-machine-title text-center"
+                style="width: 125px"
+              >
+                Quality
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row machine-card-data text-center">
+            <div class="col-4 machine-card-data-cotent">
+              <div class="machine-card-data-cotent-1">
+                {{ machine.productionHours }}
+              </div>
+              <div class="machine-card-data-cotent-2">Production Hours</div>
+            </div>
+            <div
+              class="col-4 machine-card-data-cotent"
+              *ngIf="machine.machineId.substring(2, 3) == 'F'"
+            >
+              <div class="machine-card-data-cotent-1">
+                {{ machine.productionOutput | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">
+                Production Output (Bottles)
+              </div>
+            </div>
+            <div
+              class="col-4 machine-card-data-cotent"
+              *ngIf="machine.machineId.substring(2, 3) == 'P'"
+            >
+              <div class="machine-card-data-cotent-1">
+                {{ machine.productionOutput | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">
+                Production Output (Pallets)
+              </div>
+            </div>
+            <div
+              class="col-4 machine-card-data-cotent"
+              *ngIf="machine.machineId.substring(2, 3) == 'B'"
+            >
+              <div class="machine-card-data-cotent-1">
+                {{ machine.productionOutput | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">
+                Production Output (Bottles)
+              </div>
+            </div>
+            <div
+              class="col-4 machine-card-data-cotent"
+              *ngIf="machine.machineId.substring(2, 3) == 'C'"
+            >
+              <div class="machine-card-data-cotent-1">
+                {{ machine.productionOutput | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">
+                Production Output (Bottles)
+              </div>
+            </div>
+            <div
+              class="col-4 machine-card-data-cotent"
+              *ngIf="machine.machineId.substring(2, 3) == 'L'"
+            >
+              <div class="machine-card-data-cotent-1">
+                {{ machine.productionOutput | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">
+                Production Output (Bottles)
+              </div>
+            </div>
+            <div
+              class="col-4 machine-card-data-cotent"
+              *ngIf="machine.machineId.substring(2, 3) == 'D'"
+            >
+              <div class="machine-card-data-cotent-1">
+                {{ machine.productionOutput | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">
+                Production Output (Bottles)
+              </div>
+            </div>
+            <div
+              class="col-4 machine-card-data-cotent"
+              *ngIf="machine.machineId.substring(2, 3) == 'M'"
+            >
+              <div class="machine-card-data-cotent-1">
+                {{ machine.co2Consumption | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">Co2 Output (M)</div>
+            </div>
+            <div class="col-4 machine-card-data-cotent">
+              <div class="machine-card-data-cotent-1">
+                {{ machine.throughput | number: "" }}
+              </div>
+              <div class="machine-card-data-cotent-2">Throughput</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

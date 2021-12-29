@@ -1,0 +1,53 @@
+<div class="linear-parent">
+    <!-- <div class="progress-container row">
+        <div class="col-10">
+            <div class="progress">
+                <div class="progress-bar " role="progressbar" [style]="availabitiyProgress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-bar-sub">Avalability</p>
+        </div>
+        <div class="col-2 progress-bar-position-2" >
+            {{service.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.avgAvailability * 100 | number: '1.0-1' }}%
+                <div *ngIf="service.dashboardModelCompair?.factoryParameters?.avalability > 0" [ngStyle]="{'color':service.dashboardModelCompair?.factoryParameters?.avalability > 0 ? 'red' : 'rgb(0, 193, 0)' }" class="sub-compair">
+                    <i class="fas fa-caret-up" *ngIf="service.dashboardModelCompair?.factoryParameters?.avalability < 0"></i>
+                    <i class="fas fa-caret-down" *ngIf="service.dashboardModelCompair?.factoryParameters?.avalability > 0"></i>
+                    {{service.dashboardModelCompair?.factoryParameters?.avalability * 100 | number:'1.0-1'}}%
+                </div>
+        </div>
+    </div> -->
+
+    <div class="progress-container row my-3">
+        <div class="col-10">
+            <div class="progress">
+                <div class="progress-bar " role="progressbar" [style]="qualityProgress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-bar-sub">Quality</p>
+        </div>
+        <div class="col-2 progress-bar-position-2" >
+            {{qualityProgressValue | number:'1.0-1' }}%
+            <div *ngIf="service.dashboardModelCompair?.factoryParameters?.avalability > 0" [ngStyle]="{'color':service.dashboardModelCompair?.factoryParameters?.quality > 0 ? 'red' : 'rgb(0, 193, 0)' }" class="sub-compair">
+                    <i class="fas fa-caret-up" *ngIf="service.dashboardModelCompair?.factoryParameters?.quality < 0"></i>
+                    <i class="fas fa-caret-down" *ngIf="service.dashboardModelCompair?.factoryParameters?.quality > 0"></i>
+                    {{service.dashboardModelCompair?.factoryParameters?.quality * 100 | number:'1.0-1'}}%
+                </div>
+        </div>
+    </div>
+    <div class="progress-container row my-3">
+        <div class="col-10">
+        <div class="progress">
+        <div class="progress-bar bg-warning" role="progressbar" [style]="performanceProgress" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100"></div>
+        </div>
+        <p class="progress-bar-sub">Preformance</p>
+        </div>
+        <div class="col-1 progress-bar-position-2" >
+            {{performanceProgressValue | number: '1.0-1'}}%
+            <div *ngIf="service.dashboardModelCompair?.factoryParameters?.avalability > 0" [ngStyle]="{'color':service.dashboardModelCompair?.factoryParameters?.performance > 0 ? 'red' : 'rgb(0, 193, 0)' }" class="sub-compair">
+                    <i class="fas fa-caret-up" *ngIf="service.dashboardModelCompair?.factoryParameters?.performance < 0"></i>
+                    <i class="fas fa-caret-down" *ngIf="service.dashboardModelCompair?.factoryParameters?.performance > 0"></i>
+                    {{service.dashboardModelCompair?.factoryParameters?.performance * 100 | number:'1.0-1'}}%
+                </div>
+        </div>
+</div>
+</div>
+

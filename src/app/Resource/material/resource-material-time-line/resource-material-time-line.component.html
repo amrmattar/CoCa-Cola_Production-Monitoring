@@ -1,0 +1,83 @@
+<div class="resource-material-timeline">
+    <p class="resource-material-timeline-title">Resources \ Materials \ Time Line</p>
+    <div class="resource-material-timeline-content shadow">
+        <div class="resource-material-timeline-content-title">
+            <img src="../../../../assets/img/Material.svg" alt="" srcset="" style="margin: 0px 10px;">
+            <span>Material Weight Records</span>
+        </div>
+        <div class="resource-material-timeline-content-body">
+                <ejs-grid #grid style="margin: 10px;" [dataSource]='Materials' allowPaging='true' [editSettings]='editSettings' [toolbar]='toolbar' 
+(actionBegin)="onUsersEdit($event)"  (toolbarClick)='clickHandler($event)' height='100%' rowHeight='40'>
+    <e-columns>
+        <e-column headerText='header' width='80'>
+            <ng-template #template >
+                <button ejs-button (click)="btnClick1($event)" class="e-btn">Edit</button>
+            </ng-template>
+        </e-column>
+        <e-column field='name' headerText=' Name' width='120' isPrimaryKey='true'>
+            <ng-template #template let-data>
+                    <div>
+                        <i class="fas fa-circle" style="margin-right: 10px;"></i>
+                        <span id="Emptext">{{data.name}}</span>
+                      </div>                  
+                </ng-template>
+        </e-column>
+        <e-column field='code' headerText='Code' width='120'></e-column>
+        <e-column field='unit_Of_Measure' headerText='Unit Of Measure' width='120'></e-column>
+    </e-columns>
+    <ng-template #editSettingsTemplate let-data>
+        <div ngForm #orderForm="ngForm">
+           <ejs-tab #tab id="tab_wizard" showCloseButton=false >
+        <e-tabitems>
+            <e-tabitem [header]="{ 'text': 'Product & Scrap' }" >
+            <ng-template #content>
+            <div id="tab1" style="margin-top: 20px;">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <div class="e-float-input e-control-wrapper" >
+                    <input [(ngModel)]="data.name"  id="name" name="name" type="text"  #name="ngModel" >
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text e-label-top" for="name">  Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <div class="e-float-input e-control-wrapper" >
+                    <input [(ngModel)]="data.unit_Of_Measure"  id="unit_Of_Measure" name="unit_Of_Measure" type="text"  #unit_Of_Measure="ngModel" >
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text e-label-top" for="unit_Of_Measure"> Unit Of Measure</label>
+                </div>
+            </div>
+        </div>
+<!-- *ngIf="emailFlag == 'add'" -->
+        <div class="form-row" >
+            <div class="form-group col-md-12">
+                <div class="e-float-input e-control-wrapper" >
+                    <input [(ngModel)]="data.code"  id="code" name="code" type="text"  #code="ngModel" >
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text e-label-top" for="code"> Code</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-row" >
+            <div class="form-group col-md-12">
+                <div class="e-float-input e-control-wrapper" >
+                    <input [(ngModel)]="data.secondary_Unit_Of_Measure"  id="secondary_Unit_Of_Measure" name="secondary_Unit_Of_Measure" type="text"  #secondary_Unit_Of_Measure="ngModel" >
+                    <span class="e-float-line"></span>
+                    <label class="e-float-text e-label-top" for="secondary_Unit_Of_Measure"> Secondary Unit Of Measure</label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+            </ng-template>
+        </e-tabitem>
+        </e-tabitems>
+    </ejs-tab>
+        </div>
+    </ng-template>
+                </ejs-grid>
+        </div>
+    </div>
+</div>

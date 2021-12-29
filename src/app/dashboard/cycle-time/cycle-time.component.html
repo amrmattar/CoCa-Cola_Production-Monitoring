@@ -1,0 +1,141 @@
+<div class="cycle-time shadow">
+    <div class="cycle-time-chart">
+        <div class="cycle-time-titel">
+            <i class="fas fa-circle" style="color: #4278F0;"></i>
+            <p>CYCLE TIME</p>
+            <span>[seconds]</span>
+        </div>
+        <div class="cycle-time-body">
+                <div align='center' style='height: 100%'>
+                    <ejs-chart #line style='height: inherit !important;' [chartArea]='chartArea' width='100%' align='center' [tooltip]='tooltip'
+                        [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+                        <e-series-collection>
+                            <e-series [dataSource]='cycleChart' fill='#A1BCF8' opacity=1 type='SplineArea' xName='x' yName='y' [marker]='marker' 
+                                [border]='border'>
+                            </e-series>
+                            <!-- <e-series [dataSource]='cycleChartCompair'fill='#49B14B'  type='SplineArea' xName='x' yName='y' [marker]='marker' opacity=1
+                                [border]='border'>
+                            </e-series> -->
+                        </e-series-collection>
+                    </ejs-chart>
+                </div>
+        </div>
+        <!-- <div class="cycle-time-footer row">
+            <div class="col-4 text-center">
+                <span class="span-contain-1">Avg.</span>
+                <span class="span-contain-3">1.0</span>
+            </div>
+            <div class="col-4 text-center">
+                <span class="span-contain-1">
+                    <i class="fas fa-chevron-down"></i>
+                    Min.
+                </span>
+                <span class="span-contain-2">
+                    0.5
+                </span>
+            </div>
+            <div class="col-4 text-center">
+                <span class="span-contain-1">
+                    <i class="fas fa-chevron-up"></i>
+                    Max.
+                </span>
+                <span class="span-contain-2">
+                    2.0
+                </span>
+            </div>
+        </div> -->
+    </div>
+    <div class="cycle-time-chart">
+        <div class="cycle-time-titel">
+            <i class="fas fa-circle" style="color: #4278F0;"></i>
+            <p>THROUGHPUT</p>
+            <span>[bph]</span>
+        </div>
+        <div class="cycle-time-body">
+            <div align='center' style='height: 100%'>
+                <ejs-chart #line2 style='height: inherit !important;' [chartArea]='chartArea' width='100%' align='center' [tooltip]='tooltip'
+                    [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+                    <e-series-collection>
+                        <e-series [dataSource]='throughputChart' fill='#A1BCF8' opacity=1 type='SplineArea' xName='x' yName='y' [marker]='marker' 
+                            [border]='border'>
+                        </e-series>
+                        <!-- <e-series [dataSource]='throughputChartCompair' fill='#F40009' type='SplineArea' xName='x' yName='y' [marker]='marker' opacity=1
+                            [border]='border1'>
+                        </e-series> -->
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+        <!-- <div class="cycle-time-footer row">
+            <div class="col-4 text-center">
+                <span class="span-contain-1">Avg.</span>
+                <span class="span-contain-3">1.0</span>
+            </div>
+            <div class="col-4 text-center">
+                <span class="span-contain-1">
+                    <i class="fas fa-chevron-down"></i>
+                    Min.
+                </span>
+                <span class="span-contain-2">
+                    0.5
+                </span>
+            </div>
+            <div class="col-4 text-center">
+                <span class="span-contain-1">
+                    <i class="fas fa-chevron-up"></i>
+                    Max.
+                </span>
+                <span class="span-contain-2">
+                    2.0
+                </span>
+            </div>
+        </div> -->
+    </div>
+    <div class="cycle-time-chart">
+        <div class="cycle-time-titel">
+            <i class="fas fa-circle" style="color: #4278F0;"></i>
+            <p>ACTUAL YEILD</p>
+            <span>[bottle]</span>
+        </div>
+        <div class="cycle-time-body">
+            <div align='center' style='height: 100%'>
+                <ejs-chart #line3 style='height: inherit !important;' [chartArea]='chartArea' width='100%' align='center' [tooltip]='tooltip'
+                    [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+                    <e-series-collection>
+                        <e-series [dataSource]='productionChart' fill='#A1BCF8' opacity=1 type='SplineArea' xName='x' yName='y' [marker]='marker' 
+                            [border]='border'>
+                        </e-series>
+                        <!-- <e-series [dataSource]='productionChartCompair' fill='#CA4E82'  type='SplineArea' xName='x' yName='y' [marker]='marker' opacity=1
+                            [border]='border2'>
+                        </e-series> -->
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+        <!-- <div class="cycle-time-footer row">
+            <div class="col-4 text-center">
+                <span class="span-contain-1">Avg.</span>
+                <span class="span-contain-3">1.0</span>
+            </div>
+            <div class="col-4 text-center">
+                <span class="span-contain-1">
+                    <i class="fas fa-chevron-down"></i>
+                    Min.
+                </span>
+                <span class="span-contain-2">
+                    0.5
+                </span>
+            </div>
+            <div class="col-4 text-center">
+                <span class="span-contain-1">
+                    <i class="fas fa-chevron-up"></i>
+                    Max.
+                </span>
+                <span class="span-contain-2">
+                    2.0
+                </span>
+            </div>
+        </div> -->
+    </div>
+    
+</div>

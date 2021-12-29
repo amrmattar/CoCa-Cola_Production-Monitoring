@@ -1,0 +1,29 @@
+.usage-ratio-top{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    padding: 15px;
+    .left-grid{
+        height: 98%;
+        width: 50%;
+        .left-grid-title{
+            line-height: 20px;
+            font-weight: bold;
+        }
+        .left-grid-body{
+            height: calc(100% - 20px);
+        }
+    }
+    .right-list{
+        width: 50%;
+        height: 100%;
+        margin: 6px;
+        padding: 6px;
+        // border-radius: 10px;
+        // border: 1px solid lightgray;
+        // background-color: #fff;
+        position: relative;
+        
+    }
+}

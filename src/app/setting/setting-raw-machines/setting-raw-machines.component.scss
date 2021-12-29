@@ -1,0 +1,12 @@
+.nuallocated{
+    display: flex;
+    height: 100%;
+    overflow: auto;
+    .list-title{
+        // height: 12px;
+    }
+    .manage-machine-functions{
+        height: calc(100% - 199px);
+        overflow: auto;
+    }
+}

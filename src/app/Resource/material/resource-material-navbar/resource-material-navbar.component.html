@@ -1,0 +1,10 @@
+<div class="machines-nav-bar row" style="background-color: #fff;">
+    <div [routerLink]="['resource-material', 'timeline']"      class="tab-size text-center" (click)="tabMachine('Time Line')"       [ngClass]="(tabChange =='Time Line')?'active-tab':''"      >Time Line</div>
+    <div        class="tab-size no-drop text-center"  >Supply</div>
+    <div      class="tab-size no-drop text-center"     >Weight</div>
+    <div   class="tab-size no-drop text-center"   >Consumption</div>
+    <!-- <div [routerLink]="['resource-material', 'supply']"        class="tab-size text-center" (click)="tabMachine('Supply')"          [ngClass]="(tabChange =='Supply')?'active-tab':''"         >Supply</div>
+    <div [routerLink]="['resource-material', 'weight']"        class="tab-size text-center" (click)="tabMachine('Weight')"          [ngClass]="(tabChange =='Weight')?'active-tab':''"         >Weight</div>
+    <div [routerLink]="['resource-material', 'consumption']"   class="tab-size text-center" (click)="tabMachine('Consumption')"     [ngClass]="(tabChange =='Consumption')?'active-tab':''"    >Consumption</div> -->
+    <div [routerLink]="['resource-material', 'Product&Scrap']" class="tab-size text-center" (click)="tabMachine('Product & Scrap')" [ngClass]="(tabChange =='Product & Scrap')?'active-tab':''">Product & Scrap</div>
+</div>

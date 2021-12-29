@@ -1,0 +1,207 @@
+<div class="environmental-parameters">
+    <div class="environmental-parameters-body shadow">
+        <div class="environmental-parameters-title">
+            <img src="../../../assets/img/Material.png" alt="" srcset="">
+            <span>Plan settings</span>
+        </div>
+        <div class="environmental-parameters-content">
+
+            <div class="row p-2">
+                <div class="col-12 row  mb-2 border">
+                    <div class="col-12 mt-2 text-center" style="font-weight: 600;">
+                        Shift Configration
+                    </div>
+                    <div class="col-4">
+                        <ejs-timepicker id='timepicker' placeholder="Shift Start date" floatLabelType="Always"></ejs-timepicker>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <div class='textboxes'>
+                            <ejs-textbox placeholder="Number of Shifts" [(ngModel)]="shiftNumber"  type="number"  floatLabelType="Always" (change)="addChip()" Alwayscomplete="off"></ejs-textbox>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <ejs-dropdownlist #ddlelement id='factory'  [dataSource]='source' placeholder = 'Line main machine' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class=" row border" style="width: 74%;">
+                    <div class="col-12 mt-1 text-center" style="font-weight: 600;">
+                        Factory Configration
+                    </div>
+                    
+                
+                    <div class="col-4 mb-1" >
+                        <div *ngIf="lineSelect ==undefined && machineSelect == undefined">Factory off days :</div>
+                        <div *ngIf="lineSelect !=undefined && machineSelect == undefined">Line off days :</div>
+                        <div *ngIf="lineSelect !=undefined && machineSelect != undefined">Machine off days :</div>
+                        <ejs-calendar #calendar [isMultiSelection]="multiSelection" [values]="dates" (change)="onValueChange()" (created)="onValueChange()"></ejs-calendar>
+                    </div>
+                    <div class="col-8" >
+                        <div class="row">
+                            <div class="col-4">
+                        <ejs-dropdownlist #ddlelement id='factory' [(ngModel)]="factorySelect" [dataSource]='source' placeholder = 'Select Factory' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                    </div>
+                    <div class="col-4">
+                        <ejs-dropdownlist #ddlelement id='line' [(ngModel)]="lineSelect" [dataSource]='source' placeholder = 'Select Line' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                    </div>
+                    <div class="col-4 ">
+                        <ejs-dropdownlist #ddlelement id='Machine' [(ngModel)]="machineSelect" [dataSource]='source' placeholder = 'Select Machine' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                    </div>
+                        </div>
+
+                            <ejs-chiplist #ejchip id="chip" selection="Single" cssClass="e-outline" (beforeClick)="chipclick($event)">
+                            <e-chips>
+                                <e-chip text="Full day"></e-chip>
+                            </e-chips>
+                        </ejs-chiplist>
+
+                        <div class="row">
+                        <div class="col-6" *ngIf="shiftORfull == undefined">
+
+                                    <ejs-timepicker #startTime id='startPicker' [(ngModel)]="timeFrom" placeholder="Start partial Time" (change)='onEnableEndTime($event)' floatLabelType='Always'></ejs-timepicker>
+
+                                    <ejs-timepicker #endTime id='endPicker' [(ngModel)]="timeTo" placeholder="End partial Time" [enabled]='false' floatLabelType='Always'></ejs-timepicker>
+                                    
+
+                        </div>
+                        <div class="col-6">
+                            <ejs-dropdownlist #ddlelement id='factory' [(ngModel)]="Reason"  [dataSource]='DowntimeSource' placeholder = 'Downtime Reason' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                        <div class="multiline">
+                            <ejs-textbox [multiline]='true' floatLabelType='Always' placeholder='Enter Description' ></ejs-textbox>
+                        </div>
+                        
+                        </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-8 row mt-2" style="font-size: 12px;font-weight: 600;">
+                                <div class="">*Note: Select Day(s), Time & Reason for a valid configration</div>
+                            </div>
+                            <div class="col-4">
+                                <button ejs-button class="e-danger " (click)="addConfigration()"
+                                [disabled]="Reason == '' || timeFrom == '' || timeTo == ''">add configration</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+
+                <div class="" style="width: 1%;"></div>
+                <div class="row   border" style="width: 24%;padding: 0;height: 45vh;overflow: auto;overflow-y: hidden;">
+                    <div class="col-12   dddd" style="font-weight: 600;padding: 0;">
+                        <!-- <div class="text-center">Man power settings</div> -->
+                        <div class="table">
+                          <div class="row header">
+                            <div class="cell">
+                              Day off
+                            </div>
+                            <div class="cell">
+                              From
+                            </div>
+                            <div class="cell">
+                              To
+                            </div>
+                            <div class="cell">
+                              Reason
+                            </div>
+                          </div>
+                          
+                          <div class="row" *ngFor="let row of configRowData">
+                            <div class="cell" data-title="Name">
+                                {{row.dayOff}}
+                            </div>
+                            <div class="cell" data-title="Age">
+                              {{row.from}}
+                            </div>
+                            <div class="cell" data-title="Occupation">
+                              {{row.to}}
+                            </div>
+                            <div class="cell" data-title="Location">
+                              {{row.reason}}
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                    </div>
+                <div class="col-12 row  mt-2 border">
+                    <div class="col-12 mt-2 text-center" style="font-weight: 600;">
+                        Man power Configration
+                    </div>
+                    <div class="col-4">
+                        <ejs-dropdownlist #ddlelement id='factory' [(ngModel)]="factorySelect" [dataSource]='source' placeholder = 'Select Factory' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                    </div>
+                    <div class="col-4">
+                        <ejs-dropdownlist #ddlelement id='line' [(ngModel)]="lineSelect" [dataSource]='source' placeholder = 'Select Line' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                    </div>
+                    <div class="col-4 ">
+                        <ejs-dropdownlist #ddlelement id='Machine' [(ngModel)]="machineSelect" [dataSource]='source' placeholder = 'Select Machine' (change)='onChange($event)' floatLabelType="Always"></ejs-dropdownlist>
+                    </div>
+                    <div class="col-6 row" >
+                        <div class="col-6" style="padding: 0;">
+                            <div class='textboxes'>
+                            <ejs-textbox placeholder="Grade 1" [(ngModel)]="Grade1"  type="number"  floatLabelType="Always" (change)="addChip()" Alwayscomplete="off"></ejs-textbox>
+                        </div>
+                            <div class='textboxes'>
+                            <ejs-textbox placeholder="Grade 2" [(ngModel)]="Grade2"  type="number"  floatLabelType="Always" (change)="addChip()" Alwayscomplete="off"></ejs-textbox>
+                        </div>
+                            <div class='textboxes'>
+                            <ejs-textbox placeholder="Grade 2" [(ngModel)]="Grade3"  type="number"  floatLabelType="Always" (change)="addChip()" Alwayscomplete="off"></ejs-textbox>
+                        </div>
+                        </div>
+                        <div class="col-6 mt-2 jjjj" style="position: relative;">
+                            <ejs-textbox [multiline]='true' floatLabelType='Always' placeholder='Enter Description' ></ejs-textbox>
+                            <button ejs-button class="e-danger mt-2" (click)="addConfigrationManPower()" style="position: absolute;right: 5px; bottom: 10px;" [disabled]="Grade1 == '' || Grade2 == '' || Grade3 == ''">add configration</button>
+                        </div>
+                    </div>
+                    <div class="col-6 dddd" style="height: 155px; overflow: Always;">
+                        <div class="table">
+                          <div class="row header">
+                            <div class="cell">
+                              Machine ID
+                            </div>
+                            <div class="cell">
+                                Grade_1
+                            </div>
+                            <div class="cell">
+                                Grade_2
+                            </div>
+                            <div class="cell">
+                                Grade_3
+                            </div>
+                            <div class="cell">
+                              Total_work
+                            </div>
+                          </div>
+                          
+                          <div class="row" *ngFor="let row of configRowDataMan">
+                            <div class="cell" data-title="Name">
+                                {{row.id}}
+                            </div>
+                            <div class="cell" data-title="Age">
+                              {{row.g1}}
+                            </div>
+                            <div class="cell" data-title="Age">
+                              {{row.g2}}
+                            </div>
+                            <div class="cell" data-title="Occupation">
+                              {{row.g3}}
+                            </div>
+                            <div class="cell" data-title="Location">
+                              {{row.total}}
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

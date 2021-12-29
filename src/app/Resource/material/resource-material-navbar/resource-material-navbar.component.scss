@@ -1,0 +1,19 @@
+.machines-nav-bar{
+    cursor: pointer;
+    line-height: 40px;
+    width: 100%;
+    border-bottom: 1px solid lightgray; 
+    padding: 0px 30px;
+    font-size: 0.9rem;
+    color: #272D3B;
+    .active-tab{
+        font-weight: bold;
+        border-top: 3px solid #F40009;
+    }
+    .no-drop{
+        cursor: no-drop;
+    }
+    .tab-size{
+        width: 20%;
+    }
+}

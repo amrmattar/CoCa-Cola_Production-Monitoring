@@ -1,0 +1,44 @@
+.linear-parent{
+    width: 100%;
+    height: 153px;
+    .progress-container{
+        height: 28%;
+        .progress{
+            position: relative;
+            top: 45%;
+            .progress-bar{
+                background-color: #08415C;
+            }
+        }
+
+        .progress-bar-position-2{
+            position: relative;
+            // top: -3px;
+            left: -12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #08415C;
+        }
+        .progress-bar-sub{
+            text-align: left;
+            color: #08415C;
+            font-weight: bold;
+            font-size: 12px;
+            margin-left: 5px;
+            position: relative;
+            top: 24px;
+        }
+    }
+    .sub-compair{
+        font-weight: 600;
+    position: relative;
+    height: 0px;
+    width: 50px;
+    top: -5px;
+    font-size: 0.75rem;
+    display: block;
+    }
+    .bg-warning{
+        background-color: #08415C !important;
+    }
+}

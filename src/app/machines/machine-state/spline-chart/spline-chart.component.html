@@ -1,0 +1,15 @@
+<div class="chart-fram">
+<ejs-chart #line id='spline-chartcontainer' *ngIf="lineNull !=null" align='center' [chartArea]='chartArea' width='85%' style='display:block;'
+    [primaryXAxis]='primaryXAxis' height='325px' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'>
+    <e-series-collection>
+        <e-series [dataSource]='data1' type='Spline'  xName='x' yName='y' name='OEE' width=3
+            [marker]='marker'></e-series>
+        <e-series [dataSource]='data2' type='Spline'  xName='x' yName='y' name='Avalability' width=3
+            [marker]='marker'></e-series>
+        <e-series [dataSource]='data3' type='Spline'  xName='x' yName='y' name='Performance' width=3
+            [marker]='marker'></e-series>
+            <e-series [dataSource]='data4' type='Spline'  xName='x' yName='y' name='Quality' width=3
+            [marker]='marker'></e-series>
+    </e-series-collection>
+</ejs-chart>
+</div>

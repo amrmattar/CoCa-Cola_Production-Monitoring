@@ -1,0 +1,6 @@
+<div class="machines-nav-bar row" style="background-color: #fff;">
+    <div [routerLink]="['machines', 'info']" class="col-3 text-center" (click)="tabMachine('Information')" [ngClass]="(tabChange =='Information')?'active-tab':''">Information</div>
+    <div  [routerLink]="['machines', 'stat']" class="col-3 text-center" (click)="tabMachine('Statistics')" [ngClass]="(tabChange =='Statistics')?'active-tab':''">Statistics</div   >
+    <div [routerLink]="['machines', 'hist']" class="col-3 text-center" (click)="tabMachine('History')" [ngClass]="(tabChange =='History')?'active-tab':''">History</div>
+    <div class="col-3 text-center no-drop" >Digital Twin</div>
+</div>

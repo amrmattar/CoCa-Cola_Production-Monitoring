@@ -1,0 +1,58 @@
+.dashboard-factories{
+    height: calc(100% - 50px);
+    overflow: auto;
+    .factory-card{
+        height: 380px;
+        background-color: #fff;
+        border-radius: 10px;
+        .factory-card-title{
+            line-height: 40px;
+            background-color: #08415C;
+            color: #EEEEEE;
+            border-radius: 10px 10px 0px 0px;
+            font-size: 13px;
+            padding-left: 25px;
+        }
+        .factory-card-body{
+            padding: 10px 0px;
+            .left-factory-card{
+                color: #56626f;
+                font-size: 11px;
+                font-weight: 600;
+                img{
+                    position: relative;
+                    top: -2px;
+                    height: 19px;
+                    margin-right: 5px;
+                }
+            }
+            .right-factory-card{
+                color: #8D9192;
+                font-weight: 600;
+                font-size: 12px;
+            }
+            .row-height{
+                line-height: 35px;
+                padding-left: 20px;
+            }
+            .line{
+                height: 1px;
+                background-color: #08415C;
+                position: relative;
+                top: 6px;
+            }
+            .line-title{
+                font-size: 10px;
+                color: #08415C;
+                font-weight: 700;
+            }
+            .progresstitle{
+                position: relative;
+                left: -2px;
+                width: 80px;
+                font-size: 11px;
+                font-weight: 600;
+            }
+        }
+    }
+}

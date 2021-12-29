@@ -1,0 +1,52 @@
+.cycle-time{
+    height: 100%;
+    padding: 0px 2px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: auto;
+    svg {
+    margin-left: -20px;
+}
+    .cycle-time-chart{
+        height: 33.333%;
+        border-bottom: 1px solid rgb(220, 220, 220);
+        .cycle-time-titel{
+            line-height: 35px;
+            border-bottom: 1px solid rgb(220, 220, 220);
+            p {
+                display: inline;
+                margin-top: 0;
+                margin-bottom: 0rem;
+                font-size: 14px;
+            }
+            span{
+                margin-left: 20px;
+                font-size: 13px;
+                color: #42577b;
+            }
+            i{
+                font-size: 10px;
+                margin: 0px 12px;
+            }
+        }
+        .cycle-time-body{
+            height: calc(100% - 40px);
+        }
+        .cycle-time-footer{
+            position: relative;
+            top: -35px;
+            line-height: 35px;
+            .span-contain-1{
+                font-size: 12px;
+            }
+            .span-contain-2{
+                font-size: 14px;
+                font-weight: 600;
+            }
+            .span-contain-3{
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+}

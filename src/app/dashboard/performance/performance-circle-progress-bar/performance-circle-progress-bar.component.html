@@ -1,0 +1,54 @@
+<!-- <div class="circle-progress mt-2">
+    <ejs-progressbar #annotation1 id='label-container' [type]='type1' [maximum]='max1' [minimum]='min1'
+        [value]='service.dashboardModel[this._CurrentActivityService.ShiftNum][0]?.avgoee * 100' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+        [startAngle]='startAngle1' [endAngle]='endAngle1'>
+    </ejs-progressbar>
+    <p class="oee" >OEE</p>
+    <div class="oee-circle-compair" *ngIf="service.dashboardModelCompair?.factoryParameters?.oee > 0 || service.dashboardModelCompair?.factoryParameters?.oee < 0 " [ngStyle]="{'color':service.dashboardModelCompair?.factoryParameters?.oee > 0 ? 'red' : 'rgb(0, 193, 0)' }">
+        <i class="fas fa-caret-down" *ngIf="service.dashboardModelCompair?.factoryParameters?.oee > 0"></i>
+        <i class="fas fa-caret-down" *ngIf="service.dashboardModelCompair?.factoryParameters?.oee < 0"></i>
+        {{service.dashboardModelCompair?.factoryParameters?.oee * 100 | number: '1.0-1'}}%
+    </div>
+</div> -->
+
+<div class="col-12 row " style="position: relative; left: -5px;"  >
+                    <!-- <div class="col-6 circleprog" [ngStyle]="{'display':this.service.FactoryNum == 0 ? 'block' : 'none' }">
+                        <ejs-progressbar #annotation1 id='label-container111' [type]='type1' [maximum]='max1' [minimum]='min1'
+                            [value]='oee' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                            [startAngle]='startAngle1' [endAngle]='endAngle1'  progressColor="#FF9F1C">
+                        </ejs-progressbar>
+                    </div>
+                    <div class="col-6 circleprog" [ngStyle]="{'display':this.service.FactoryNum == 1 ? 'block' : 'none' }">
+                        <ejs-progressbar #annotation1 id='label-container11' [type]='type1' [maximum]='max1' [minimum]='min1'
+                            [value]='oee2' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                            [startAngle]='startAngle1' [endAngle]='endAngle1'  progressColor="#FF9F1C">
+                        </ejs-progressbar>
+                    </div> -->
+                    <div class="col-12" [ngStyle]="{'display':this.service.FactoryNum == 0 ? 'block' : 'none' }">
+                        <ejs-progressbar #annotation2 id='label-container222' [type]='type1' [maximum]='max1' [minimum]='min1'
+                        [value]='sle' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                        [startAngle]='startAngle1' [endAngle]='endAngle1'  progressColor="#00D1DE">
+                    </ejs-progressbar>
+                </div>
+                    <div class="col-12" [ngStyle]="{'display':this.service.FactoryNum == 1 ? 'block' : 'none' }">
+                        <ejs-progressbar #annotation2 id='label-container22' [type]='type1' [maximum]='max1' [minimum]='min1'
+                        [value]='sle2' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                        [startAngle]='startAngle1' [endAngle]='endAngle1'  progressColor="#00D1DE">
+                    </ejs-progressbar>
+                </div>
+                <!-- <div class="col-4">
+                    <ejs-progressbar #annotation3 id='label-container3' [type]='type1' [maximum]='max1' [minimum]='min1'
+                    [value]='value3' [width]='width' [height]='height' [animation]='animation' (load)='load($event)'
+                    [startAngle]='startAngle1' [endAngle]='endAngle1' progressColor="#CA4E82">
+                </ejs-progressbar>
+            </div> -->
+                    
+                    <div class="col-6 text-center ">
+                        <div class="progresstitle">SLE </div>
+                    </div>
+                    <!-- <div class="col-6"></div> -->
+                    <!-- <div class="col-4 text-center ">
+                        <div class="progresstitle">USLE</div>
+                    </div> -->
+                </div>
+
